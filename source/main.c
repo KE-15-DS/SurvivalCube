@@ -17,13 +17,16 @@ adibide batean oinarrituta.
 #include "spriteak.h"
 #include "jokoa01.h"
 
+// aldagai globalen hasieraketak
+int EGOERA = MENU;
+int LVL = 0;
+int HP = 100;
 
 //---------------------------------------------------------------------------------
 int main(void) {
 //---------------------------------------------------------------------------------
 
 	HasieratuGrafikoakSpriteak();
-	EtenakBaimendu();
 
 	// Zuen jokoari dei egingo zaio hemendik
 	jokoa01();

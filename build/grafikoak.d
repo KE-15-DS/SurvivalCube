@@ -1,4 +1,4 @@
-grafikoak.o: /home/user/Desktop/Proiektua/source/grafikoak.c \
+grafikoak.o: /home/user/SharedFiles/SurvivalCube/source/grafikoak.c \
   /opt/devkitPro/libnds/include/nds.h \
   /opt/devkitPro/libnds/include/nds/libversion.h \
   /opt/devkitPro/libnds/include/nds/ndstypes.h \
@@ -47,8 +47,8 @@ grafikoak.o: /home/user/Desktop/Proiektua/source/grafikoak.c \
   /opt/devkitPro/libnds/include/nds/arm9/sprite.h \
   /opt/devkitPro/libnds/include/nds/system.h \
   /opt/devkitPro/libnds/include/nds/arm9/decompress.h \
-  /home/user/Desktop/Proiektua/include/grafikoak.h \
-  /home/user/Desktop/Proiektua/include/spriteak.h
+  /home/user/SharedFiles/SurvivalCube/include/grafikoak.h \
+  /home/user/SharedFiles/SurvivalCube/include/spriteak.h
 
 /opt/devkitPro/libnds/include/nds.h:
 
@@ -146,6 +146,6 @@ grafikoak.o: /home/user/Desktop/Proiektua/source/grafikoak.c \
 
 /opt/devkitPro/libnds/include/nds/arm9/decompress.h:
 
-/home/user/Desktop/Proiektua/include/grafikoak.h:
+/home/user/SharedFiles/SurvivalCube/include/grafikoak.h:
 
-/home/user/Desktop/Proiektua/include/spriteak.h:
+/home/user/SharedFiles/SurvivalCube/include/spriteak.h:

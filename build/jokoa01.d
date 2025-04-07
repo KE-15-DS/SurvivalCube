@@ -1,4 +1,4 @@
-jokoa01.o: /home/user/Desktop/Proiektua/source/jokoa01.c \
+jokoa01.o: /home/user/SharedFiles/SurvivalCube/source/jokoa01.c \
   /opt/devkitPro/libnds/include/nds.h \
   /opt/devkitPro/libnds/include/nds/libversion.h \
   /opt/devkitPro/libnds/include/nds/ndstypes.h \
@@ -47,10 +47,10 @@ jokoa01.o: /home/user/Desktop/Proiektua/source/jokoa01.c \
   /opt/devkitPro/libnds/include/nds/arm9/sprite.h \
   /opt/devkitPro/libnds/include/nds/system.h \
   /opt/devkitPro/libnds/include/nds/arm9/decompress.h \
-  /home/user/Desktop/Proiektua/include/definizioak.h \
-  /home/user/Desktop/Proiektua/include/periferikoak.h \
-  /home/user/Desktop/Proiektua/include/zerbitzuErrutinak.h \
-  /home/user/Desktop/Proiektua/include/fondoak.h
+  /home/user/SharedFiles/SurvivalCube/include/definizioak.h \
+  /home/user/SharedFiles/SurvivalCube/include/periferikoak.h \
+  /home/user/SharedFiles/SurvivalCube/include/zerbitzuErrutinak.h \
+  /home/user/SharedFiles/SurvivalCube/include/fondoak.h
 
 /opt/devkitPro/libnds/include/nds.h:
 
@@ -148,10 +148,10 @@ jokoa01.o: /home/user/Desktop/Proiektua/source/jokoa01.c \
 
 /opt/devkitPro/libnds/include/nds/arm9/decompress.h:
 
-/home/user/Desktop/Proiektua/include/definizioak.h:
+/home/user/SharedFiles/SurvivalCube/include/definizioak.h:
 
-/home/user/Desktop/Proiektua/include/periferikoak.h:
+/home/user/SharedFiles/SurvivalCube/include/periferikoak.h:
 
-/home/user/Desktop/Proiektua/include/zerbitzuErrutinak.h:
+/home/user/SharedFiles/SurvivalCube/include/zerbitzuErrutinak.h:
 
-/home/user/Desktop/Proiektua/include/fondoak.h:
+/home/user/SharedFiles/SurvivalCube/include/fondoak.h:

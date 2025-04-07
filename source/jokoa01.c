@@ -19,19 +19,31 @@ adibide batean oinarrituta.
 
 int denb; // denbora neurtzen joateko; baloratu ea beharrezkoa den
 
+void erakutsiMenua()
+{
+	// TODO: menuaren fondoa jarri
+	iprintf("\x1b[22;5HOngi etorri gure jokora");
+}
+
+void erakutsiInfo()
+{
+	// TODO: polito jarri
+	iprintf("\x1b[22;5HHonela jokatzen da: ");
+}
+
 void jokoa01()
 {	
 	// Aldagai baten definizioa
 	int i=9;
 	int tekla=0;;
 	// kaixo
-	EGOERA=ZAI;
+	EGOERA=MENU;  // uste dut ez dela beharrezkoa
 	
-	
+	/*
 	iprintf("\x1b[22;5HHau idazte proba bat da");	// Hau 22 lerroan eta 5 zutabean hasiko da idazten.
 													//Aldagai baten idatzi nahi izanez gero, %d komatxoen barruan eta 
 													 //komatxoen kanpoan aldagaiaren balioa.
-	iprintf("\x1b[23;5HAldagai proba. Balioa=%d", i);
+	iprintf("\x1b[23;5HAldagai proba. Balioa=%d", i);*/
 
 	//******************************2.JARDUERAN************************************************//
 	// ORDEN HONETAN ZEREGIN HAUEK EGITEA GOMENDATZEN DA:
@@ -42,39 +54,32 @@ void jokoa01()
 	// Tenporizadorearen etenak baimendu behar dira.
 	// Etenak baimendu behar dira.
 	//***************************************************************************************//
+	// TODO: konfiguratu teklatua: eten bidez: A, START, SELECT, 
 	konfiguratuTeklatua(1 + 16384);  // 2^0+2^14
+	// TODO: konfiguratu tenporizadorea / VBLANK etenak erabili
 	konfiguratuTenporizadorea(39322, 0xC2);
 	etenZerbErrutEzarri();
 	TekEtenBaimendu();
 	DenbEtenBaimendu();
 	IME = 1;
 	
-
+	erakutsiMenua();
 	while (1)
 	{	
-		/*************************************1.JARDUERAN**************************************/
-		// ZAI egoeran dagoela, hemen teklatuaren inkesta egin, sakatu den tekla pantailaratu, eta START
-		// sakatzean egoera aldatu
 		switch (EGOERA)
 		{
-		case ZAI:
-			if (TeklaDetektatu())
-			{
-				int tekla = SakatutakoTekla();
-				iprintf("\x1b[22;5HSakatu den tekla: %d", tekla);
-				if (tekla == START)
-				{
-					erakutsiAtea();
-					EGOERA = ITXITA;
-				}
-			}
+		case MENU:
+			
 			break;
-		case ITXITA:
-			break;
-		case IREKITA: break;
+		case INFO:
+		
+			// TODO: Info fondoa gehitu
+			
+		 break; 
+
+		case GAMEOVER: break; // TODO: Game Over fondoa gehitu
 		}
 	}
 	// Bukaeran etenak galarazi.
+	IME = 0;
 }
-/***********************2024-2025*******************************/
-

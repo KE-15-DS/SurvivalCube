@@ -1,4 +1,5 @@
-periferikoak.o: /home/user/Desktop/Proiektua/source/periferikoak.c \
+periferikoak.o:  \
+ /home/user/SharedFiles/SurvivalCube/source/periferikoak.c \
   /opt/devkitPro/libnds/include/nds.h \
   /opt/devkitPro/libnds/include/nds/libversion.h \
   /opt/devkitPro/libnds/include/nds/ndstypes.h \
@@ -47,7 +48,7 @@ periferikoak.o: /home/user/Desktop/Proiektua/source/periferikoak.c \
   /opt/devkitPro/libnds/include/nds/arm9/sprite.h \
   /opt/devkitPro/libnds/include/nds/system.h \
   /opt/devkitPro/libnds/include/nds/arm9/decompress.h \
-  /home/user/Desktop/Proiektua/include/definizioak.h
+  /home/user/SharedFiles/SurvivalCube/include/definizioak.h
 
 /opt/devkitPro/libnds/include/nds.h:
 
@@ -145,4 +146,4 @@ periferikoak.o: /home/user/Desktop/Proiektua/source/periferikoak.c \
 
 /opt/devkitPro/libnds/include/nds/arm9/decompress.h:
 
-/home/user/Desktop/Proiektua/include/definizioak.h:
+/home/user/SharedFiles/SurvivalCube/include/definizioak.h:

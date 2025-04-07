@@ -1,4 +1,4 @@
-fondoak.o: /home/user/Desktop/Proiektua/source/fondoak.c \
+fondoak.o: /home/user/SharedFiles/SurvivalCube/source/fondoak.c \
   /opt/devkitPro/libnds/include/nds.h \
   /opt/devkitPro/libnds/include/nds/libversion.h \
   /opt/devkitPro/libnds/include/nds/ndstypes.h \
@@ -47,10 +47,10 @@ fondoak.o: /home/user/Desktop/Proiektua/source/fondoak.c \
   /opt/devkitPro/libnds/include/nds/arm9/sprite.h \
   /opt/devkitPro/libnds/include/nds/system.h \
   /opt/devkitPro/libnds/include/nds/arm9/decompress.h \
-  /home/user/Desktop/Proiektua/include/fondoak.h \
-  /home/user/Desktop/Proiektua/include/grafikoak.h \
-  /home/user/Desktop/Proiektua/build/Atea.h \
-  /home/user/Desktop/Proiektua/build/AteaIrekita.h
+  /home/user/SharedFiles/SurvivalCube/include/fondoak.h \
+  /home/user/SharedFiles/SurvivalCube/include/grafikoak.h \
+  /home/user/SharedFiles/SurvivalCube/build/Atea.h \
+  /home/user/SharedFiles/SurvivalCube/build/AteaIrekita.h
 
 /opt/devkitPro/libnds/include/nds.h:
 
@@ -148,10 +148,10 @@ fondoak.o: /home/user/Desktop/Proiektua/source/fondoak.c \
 
 /opt/devkitPro/libnds/include/nds/arm9/decompress.h:
 
-/home/user/Desktop/Proiektua/include/fondoak.h:
+/home/user/SharedFiles/SurvivalCube/include/fondoak.h:
 
-/home/user/Desktop/Proiektua/include/grafikoak.h:
+/home/user/SharedFiles/SurvivalCube/include/grafikoak.h:
 
-/home/user/Desktop/Proiektua/build/Atea.h:
+/home/user/SharedFiles/SurvivalCube/build/Atea.h:
 
-/home/user/Desktop/Proiektua/build/AteaIrekita.h:
+/home/user/SharedFiles/SurvivalCube/build/AteaIrekita.h:

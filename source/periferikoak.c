@@ -38,6 +38,7 @@ int SakatutakoTekla()
 	else if (~TEKLAK_DAT & 512) return L;
 }
 
+// TODO? konfiguratu A, B, etab. pasatzen
 void konfiguratuTeklatua(int TEK_konf)
 {
 	// Teklatuaren konfigurazioa bere S/I erregistroak aldatuz

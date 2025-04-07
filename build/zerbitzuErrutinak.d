@@ -1,5 +1,5 @@
 zerbitzuErrutinak.o:  \
- /home/user/Desktop/Proiektua/source/zerbitzuErrutinak.c \
+ /home/user/SharedFiles/SurvivalCube/source/zerbitzuErrutinak.c \
   /opt/devkitPro/libnds/include/nds.h \
   /opt/devkitPro/libnds/include/nds/libversion.h \
   /opt/devkitPro/libnds/include/nds/ndstypes.h \
@@ -48,10 +48,11 @@ zerbitzuErrutinak.o:  \
   /opt/devkitPro/libnds/include/nds/arm9/sprite.h \
   /opt/devkitPro/libnds/include/nds/system.h \
   /opt/devkitPro/libnds/include/nds/arm9/decompress.h \
-  /home/user/Desktop/Proiektua/include/definizioak.h \
-  /home/user/Desktop/Proiektua/include/periferikoak.h \
-  /home/user/Desktop/Proiektua/include/fondoak.h \
-  /home/user/Desktop/Proiektua/include/spriteak.h
+  /home/user/SharedFiles/SurvivalCube/include/definizioak.h \
+  /home/user/SharedFiles/SurvivalCube/include/periferikoak.h \
+  /home/user/SharedFiles/SurvivalCube/include/fondoak.h \
+  /home/user/SharedFiles/SurvivalCube/include/spriteak.h \
+  /home/user/SharedFiles/SurvivalCube/include/jokoa01.h
 
 /opt/devkitPro/libnds/include/nds.h:
 
@@ -149,10 +150,12 @@ zerbitzuErrutinak.o:  \
 
 /opt/devkitPro/libnds/include/nds/arm9/decompress.h:
 
-/home/user/Desktop/Proiektua/include/definizioak.h:
+/home/user/SharedFiles/SurvivalCube/include/definizioak.h:
 
-/home/user/Desktop/Proiektua/include/periferikoak.h:
+/home/user/SharedFiles/SurvivalCube/include/periferikoak.h:
 
-/home/user/Desktop/Proiektua/include/fondoak.h:
+/home/user/SharedFiles/SurvivalCube/include/fondoak.h:
 
-/home/user/Desktop/Proiektua/include/spriteak.h:
+/home/user/SharedFiles/SurvivalCube/include/spriteak.h:
+
+/home/user/SharedFiles/SurvivalCube/include/jokoa01.h:
