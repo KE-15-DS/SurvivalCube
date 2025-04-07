@@ -3,6 +3,8 @@
 /*-------------------------------------
 definizioak.h
 -------------------------------------*/
+#ifndef DEFINIZIOAK_H
+#define DEFINIZIOAK_H
 
 #include <nds.h>		// NDS-rako garatuta dagoen liburutegia
 #include <stdio.h>		// C-ko liburutegi estandarra sarrera eta irteerako funtzioak definitzen dituena
@@ -44,12 +46,20 @@ touchPosition PANT_DAT;
 #define L			9
 
 // Automataren egoera posibleak ere irakurgarriagoak egiteko
-
-#define ZAI 			0
-#define ITXITA 		1
-#define IREKITA 		2
+/*
+#define MENU 		0
+#define INFO 		1
+#define INGAME 		2
+#define GAMEOVER	3
+*/
+enum Egoera {
+    MENU,
+    INFO,
+    INGAME,
+    GAMEOVER
+};
 
 extern int EGOERA;
 
 /***********************2024-2025*******************************/
-
+#endif DEFINIZIOAK_H
