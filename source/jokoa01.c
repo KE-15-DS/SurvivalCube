@@ -24,7 +24,7 @@ void jokoa01()
 	// Aldagai baten definizioa
 	int i=9;
 	int tekla=0;;
-
+	// kaixo
 	EGOERA=ZAI;
 	
 	
