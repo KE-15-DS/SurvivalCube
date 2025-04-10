@@ -53,6 +53,7 @@ void tenpEten()
 		// etsaiak
 		// player
 		tick();
+		marraztu();
 	}
 	/*
 	if (EGOERA!=ZAI)

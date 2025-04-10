@@ -20,6 +20,19 @@ void tick()
 
 }
 
+void marraztu()
+{
+    // MEGA TODO
+    int i;
+    for (i=0; i < etsai_lista_len; i++)
+    {
+        if (pantailan_dago(etsai_lista[i].pos))
+        {
+            // marraztu etsaia
+        }
+    }
+}
+
 void spawnEnemy()
 {
     static const int min_dist = 40;
@@ -45,6 +58,11 @@ etsaia_t etsaia_hasieratu()
     return e;
 }
 
+bool pantailan_dago(koord_t rel)
+{
+    return rel.x < 128 && rel.y < 96 && rel.x > -128 && rel.y > -96;
+}
+
 // Jokalarian zentratuta -> absolutuak
 koord_t rel2abs(koord_t rel)
 {
@@ -52,6 +70,28 @@ koord_t rel2abs(koord_t rel)
     abs.x = jokalari_pos.x + rel.x;
     abs.y = jokalari_pos.y + rel.y;
     return abs;
+}
+
+koord_t rel2pant(koord_t rel)
+{
+    static const int erdix = 128;
+    static const int erdiy = 96;
+    koord_t p;
+    p.x = rel.x + erdix;
+    p.y = rel.y + erdiy;
+    return p;
+}
+
+koord_t abs2rel(koord_t abs)
+{
+    // TODO
+    koord_t r;
+    return r;
+}
+
+koord_t abs2pant(koord_t abs)
+{
+    return rel2pant(abs2rel(abs));
 }
 
 // TODO testear

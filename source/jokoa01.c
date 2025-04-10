@@ -64,6 +64,7 @@ void jokoa01()
 	IME = 1;
 	
 	erakutsiMenua();
+	
 	while (1)
 	{	
 		switch (EGOERA)
