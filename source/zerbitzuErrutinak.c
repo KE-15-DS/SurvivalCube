@@ -17,9 +17,8 @@ int seg3;   // Hiru segundo pasatzen ote diren ikusten joateko
 
 void tekEten ()
 {
-	switch (EGOERA)
-	{	
-	case MENU:
+	if (EGOERA == MENU)
+	{
 		switch (SakatutakoTekla())
 		{
 		case START:
@@ -32,14 +31,14 @@ void tekEten ()
 			erakutsiInfo();
 			break;
 		}
-		break;
-	case INFO:
-		if (SakatutakoTekla() == SELECT)
+	}
+	else if (EGOERA == INFO)
+	{
+		if (SakatutakoTekla() == B)
 		{
 			EGOERA = MENU;
 			erakutsiMenua();
 		}
-		break;
 	}
 }
 
@@ -74,7 +73,6 @@ void tenpEten()
 
 void etenZerbErrutEzarri()
 {
-// HAU BETE
 	irqSet(IRQ_KEYS, tekEten);
 	irqSet(IRQ_TIMER0, tenpEten);
 }

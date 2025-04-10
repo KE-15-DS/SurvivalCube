@@ -36,7 +36,6 @@ void jokoa01()
 	// Aldagai baten definizioa
 	int i=9;
 	int tekla=0;;
-	// kaixo
 	EGOERA=MENU;  // uste dut ez dela beharrezkoa
 	
 	/*
@@ -54,8 +53,9 @@ void jokoa01()
 	// Tenporizadorearen etenak baimendu behar dira.
 	// Etenak baimendu behar dira.
 	//***************************************************************************************//
-	// TODO: konfiguratu teklatua: eten bidez: A, START, SELECT, 
-	konfiguratuTeklatua(1 + 16384);  // 2^0+2^14
+	//konfiguratuTeklatua(1 + 16384);  // 2^0+2^14
+	//konfiguratuTeklatua(KEY_IRQ_ENABLE | KEY_IRQ_OR | KEY_A | KEY_START | KEY_SELECT);
+	konfiguratuTeklatua(1 + 2 + (1<<2) + (1<<3) + (1<<14));  // A, START, SELECT
 	// TODO: konfiguratu tenporizadorea / VBLANK etenak erabili
 	konfiguratuTenporizadorea(39322, 0xC2);
 	etenZerbErrutEzarri();
