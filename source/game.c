@@ -16,9 +16,15 @@ void tick()
     for (;i < etsai_lista_len; i++)
     {
         // mugitu etsaiak
+        // TODO kontrolatu denbora
         int_norabide_t n = lortu_norabidea(abs2rel(etsai_lista[i].pos));
         etsai_lista[i].pos.x += n.x;
         etsai_lista[i].pos.y += n.y;
+    }
+    // TODO menos random
+    if (random(0,24) == 0)
+    {
+        spawnEnemy();
     }
 }
 
@@ -91,10 +97,8 @@ float sqrt(float x)
 {
     // Convert float to fixed-point
     s32 fixed_num = floattof32(x);
-
     // Calculate square root (result is also fixed-point)
     s32 fixed_result = sqrtf32(fixed_num);
-
     // Convert result back to float
     return f32tofloat(fixed_result);
 }

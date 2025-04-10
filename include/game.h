@@ -40,6 +40,7 @@ koord_t rel2abs(koord_t rel);
 int random(int min, int max);
 koord_t rel2pant(koord_t rel);
 koord_t abs2pant(koord_t abs);
+koord_t abs2rel(koord_t abs);
 bool pantailan_dago(koord_t rel);
 int_norabide_t lortu_norabidea(koord_t rel);
 

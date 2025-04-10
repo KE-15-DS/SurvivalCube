@@ -29,6 +29,8 @@ koord_t jokalari_pos;
 
 int main(void) 
 {
+	jokalari_pos.x = 500;  // maparen erdia
+	jokalari_pos.y = 500;  // TODO maparen limiteak
 	srand(time(NULL));
 	HasieratuGrafikoakSpriteak();
 

@@ -8,6 +8,7 @@
 - ingame
 - sprites de ingame
 - Jugador mira hacia donde va (izq/dcha)
+- q no se salgan las cosas del limite del mapa
 
 # Para mejorar
 - Animaciones sprites
