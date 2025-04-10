@@ -51,14 +51,17 @@ void spawnEnemy()
     static const int min_dist = 40;
     static const int max_dist = 140;
 
-    int x = random(min_dist, max_dist);
-    int y = random(min_dist, max_dist);
-    etsaia_t e = etsaia_hasieratu();
-    e.pos.x = x;
-    e.pos.y = y;
+    if (etsai_lista_len < 100)
+    {
+        int x = random(min_dist, max_dist);
+        int y = random(min_dist, max_dist);
+        etsaia_t e = etsaia_hasieratu();
+        e.pos.x = x;
+        e.pos.y = y;
 
-    etsai_lista[etsai_lista_len] = e;  // kopia
-    etsai_lista_len++;
+        etsai_lista[etsai_lista_len] = e;  // kopia
+        etsai_lista_len++;
+    }
 }
 
 etsaia_t etsaia_hasieratu()
