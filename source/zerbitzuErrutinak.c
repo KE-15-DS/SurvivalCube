@@ -11,6 +11,7 @@ periferikoak.c
 #include "fondoak.h"
 #include "spriteak.h"
 #include "jokoa01.h"
+#include "game.h"
 
 // int EGOERA; // Arazo bat badago bota errua Ekaini
 int seg3;   // Hiru segundo pasatzen ote diren ikusten joateko
@@ -45,7 +46,14 @@ void tekEten ()
 void tenpEten()
 {
 	static int tik=0;
-	static int seg=0;
+	if (EGOERA == INGAME)
+	{
+		// marraztu behar dena marraztu
+		// fondoa
+		// etsaiak
+		// player
+		tick();
+	}
 	/*
 	if (EGOERA!=ZAI)
 	{

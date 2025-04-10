@@ -54,10 +54,5 @@ enum Egoera {
     GAMEOVER
 };
 
-// Aldagai globalak (yupiiii)
-extern int EGOERA;
-extern int LVL;
-extern int HP;
-
 /***********************2024-2025*******************************/
 #endif

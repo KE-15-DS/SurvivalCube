@@ -16,6 +16,7 @@ adibide batean oinarrituta.
 #include "periferikoak.h"
 #include "zerbitzuErrutinak.h"
 #include "fondoak.h"
+#include "game.h"
 
 int denb; // denbora neurtzen joateko; baloratu ea beharrezkoa den
 
@@ -33,9 +34,8 @@ void erakutsiInfo()
 
 void jokoa01()
 {	
-	// Aldagai baten definizioa
-	int i=9;
-	int tekla=0;;
+
+	int tekla=0;
 	EGOERA=MENU;  // uste dut ez dela beharrezkoa
 	
 	/*
@@ -57,7 +57,7 @@ void jokoa01()
 	//konfiguratuTeklatua(KEY_IRQ_ENABLE | KEY_IRQ_OR | KEY_A | KEY_START | KEY_SELECT);
 	konfiguratuTeklatua(1 + 2 + (1<<2) + (1<<3) + (1<<14));  // A, START, SELECT
 	// TODO: konfiguratu tenporizadorea / VBLANK etenak erabili
-	konfiguratuTenporizadorea(39322, 0xC2);
+	konfiguratuTenporizadorea(56798, (1<<6)+(1<<7)+1);
 	etenZerbErrutEzarri();
 	TekEtenBaimendu();
 	DenbEtenBaimendu();
