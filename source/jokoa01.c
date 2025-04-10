@@ -79,6 +79,20 @@ void jokoa01()
 		 break; 
 
 		case GAMEOVER: break; // TODO: Game Over fondoa gehitu
+		case INGAME:
+			// teklatuaren inkesta (geziak)
+			if (TeklaDetektatu())
+			{
+				if (~TEKLAK_DAT & (1<<6))  // gora
+					jokalari_pos.y--;
+				if (~TEKLAK_DAT & (1<<7))  // behera
+					jokalari_pos.y++;
+				if (~TEKLAK_DAT & (1<<4))  // eskubi
+					jokalari_pos.x++;
+				if (~TEKLAK_DAT & (1<<5))  // ezkerra
+					jokalari_pos.x--;
+			}
+			break;
 		}
 	}
 	// Bukaeran etenak galarazi.
