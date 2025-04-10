@@ -16,6 +16,7 @@ adibide batean oinarrituta.
 #include "periferikoak.h"
 #include "zerbitzuErrutinak.h"
 #include "fondoak.h"
+#include "game.h"
 
 int denb; // denbora neurtzen joateko; baloratu ea beharrezkoa den
 
@@ -33,10 +34,8 @@ void erakutsiInfo()
 
 void jokoa01()
 {	
-	// Aldagai baten definizioa
-	int i=9;
-	int tekla=0;;
-	// kaixo
+
+	int tekla=0;
 	EGOERA=MENU;  // uste dut ez dela beharrezkoa
 	
 	/*
@@ -54,16 +53,18 @@ void jokoa01()
 	// Tenporizadorearen etenak baimendu behar dira.
 	// Etenak baimendu behar dira.
 	//***************************************************************************************//
-	// TODO: konfiguratu teklatua: eten bidez: A, START, SELECT, 
-	konfiguratuTeklatua(1 + 16384);  // 2^0+2^14
+	//konfiguratuTeklatua(1 + 16384);  // 2^0+2^14
+	//konfiguratuTeklatua(KEY_IRQ_ENABLE | KEY_IRQ_OR | KEY_A | KEY_START | KEY_SELECT);
+	konfiguratuTeklatua(1 + 2 + (1<<2) + (1<<3) + (1<<14));  // A, START, SELECT
 	// TODO: konfiguratu tenporizadorea / VBLANK etenak erabili
-	konfiguratuTenporizadorea(39322, 0xC2);
+	konfiguratuTenporizadorea(56798, (1<<6)+(1<<7)+1);
 	etenZerbErrutEzarri();
 	TekEtenBaimendu();
 	DenbEtenBaimendu();
 	IME = 1;
 	
 	erakutsiMenua();
+	
 	while (1)
 	{	
 		switch (EGOERA)
@@ -78,6 +79,20 @@ void jokoa01()
 		 break; 
 
 		case GAMEOVER: break; // TODO: Game Over fondoa gehitu
+		case INGAME:
+			// teklatuaren inkesta (geziak)
+			if (TeklaDetektatu())
+			{
+				if (~TEKLAK_DAT & (1<<6))  // gora
+					jokalari_pos.y--;
+				if (~TEKLAK_DAT & (1<<7))  // behera
+					jokalari_pos.y++;
+				if (~TEKLAK_DAT & (1<<4))  // eskubi
+					jokalari_pos.x++;
+				if (~TEKLAK_DAT & (1<<5))  // ezkerra
+					jokalari_pos.x--;
+			}
+			break;
 		}
 	}
 	// Bukaeran etenak galarazi.

@@ -9,6 +9,7 @@ adibide batean oinarrituta.
 #include <stdio.h>		// C-ko liburutegi estandarra sarrera eta irteerako funtzioak definitzen dituena
 #include <stdlib.h>		// C-ko liburutegi estandarra memoria erreserbak eta zenbaki bihurketak egiteko
 #include <unistd.h>		// Sistema eragileen arteko bateragarritasuna ziurtatzeko liburutegia
+#include <time.h>
 
 // Guk garatutako fitxategiak
 
@@ -16,16 +17,21 @@ adibide batean oinarrituta.
 #include "definizioak.h"
 #include "spriteak.h"
 #include "jokoa01.h"
+#include "game.h"
 
 // aldagai globalen hasieraketak
 int EGOERA = MENU;
 int LVL = 0;
 int HP = 100;
+etsaia_t etsai_lista[100];  // uste dut horrela hasieratzen dela
+int etsai_lista_len = 0;
+koord_t jokalari_pos;
 
-//---------------------------------------------------------------------------------
-int main(void) {
-//---------------------------------------------------------------------------------
-
+int main(void) 
+{
+	jokalari_pos.x = 500;  // maparen erdia
+	jokalari_pos.y = 500;  // TODO maparen limiteak
+	srand(time(NULL));
 	HasieratuGrafikoakSpriteak();
 
 	// Zuen jokoari dei egingo zaio hemendik

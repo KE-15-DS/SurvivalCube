@@ -11,20 +11,21 @@ periferikoak.c
 #include "fondoak.h"
 #include "spriteak.h"
 #include "jokoa01.h"
+#include "game.h"
 
 // int EGOERA; // Arazo bat badago bota errua Ekaini
 int seg3;   // Hiru segundo pasatzen ote diren ikusten joateko
 
 void tekEten ()
 {
-	switch (EGOERA)
-	{	
-	case MENU:
-		switch (SakatutakoTekla())
+	if (EGOERA == MENU)
+	{
+		switch (SakatutakoTekla())  // ezin dira 2 aldi berean sakatu
 		{
 		case START:
 			EGOERA = INGAME;
 			// TODO: gauzak egin: hasieraketak, bla bla
+			erakutsiMagoa(101, 128-8, 96-8);
 			break;
 		case SELECT:
 			EGOERA = INFO;
@@ -32,21 +33,29 @@ void tekEten ()
 			erakutsiInfo();
 			break;
 		}
-		break;
-	case INFO:
-		if (SakatutakoTekla() == SELECT)
+	}
+	else if (EGOERA == INFO)
+	{
+		if (SakatutakoTekla() == B)
 		{
 			EGOERA = MENU;
 			erakutsiMenua();
 		}
-		break;
 	}
 }
 
 void tenpEten()
 {
 	static int tik=0;
-	static int seg=0;
+	if (EGOERA == INGAME)
+	{
+		// marraztu behar dena marraztu
+		// fondoa
+		// etsaiak
+		// player
+		tick();
+		marraztu();
+	}
 	/*
 	if (EGOERA!=ZAI)
 	{
@@ -74,7 +83,6 @@ void tenpEten()
 
 void etenZerbErrutEzarri()
 {
-// HAU BETE
 	irqSet(IRQ_KEYS, tekEten);
 	irqSet(IRQ_TIMER0, tenpEten);
 }

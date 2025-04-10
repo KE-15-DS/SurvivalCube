@@ -1,2 +1,2 @@
 # SurvivalCube
-GOTY 2025
+Absoluto GOTY 2025
