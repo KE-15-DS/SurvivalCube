@@ -19,11 +19,11 @@ extern void SpriteakMemorianGorde();
 /* Irudikatutako Spriteak memorian kargatzen ditu.*/
 
 
-extern void ErakutsiErronboa(int indizea, int x, int y);
+extern void erakutsiMagoa(int indizea, int x, int y);
 /* Funtzio honek erronbo bat irudikatzen du pantailako x, y posizioan. Pantailan ateratzea nahi den erronbo 
    bakoitzari indize desberdin bat esleitu behar zaio, 0 eta 126 balioen arteko indizea izan daiteke. */
 
-extern void EzabatuErronboa(int indizea, int x, int y);
+extern void ezabatuMagoa(int indizea, int x, int y);
 /* Funtzio honek erronbo baten indizea pasata pantailatik ezabatzen du */
 
 extern void ErakutsiErronboHandia(int indizea, int x, int y);

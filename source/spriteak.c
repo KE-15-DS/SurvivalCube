@@ -13,7 +13,7 @@ adibide batean oinarrituta.
 #include "spriteak.h"
 #include "definizioak.h"
 
-u16* gfxerronbo;
+u16* gfxmago;
 u16* gfxerronboHandia;
 
 
@@ -21,17 +21,30 @@ u16* gfxerronboHandia;
 void memoriaErreserbatu()
 {
 	/* Pantaila nagusian gehitu nahi den sprite bakoitzarentzako horrelako bat egin behar da. */
-	gfxerronbo= oamAllocateGfx(&oamMain, SpriteSize_16x16, SpriteColorFormat_256Color);
+	gfxmago= oamAllocateGfx(&oamMain, SpriteSize_16x16, SpriteColorFormat_256Color);
 	gfxerronboHandia=oamAllocateGfx(&oamMain, SpriteSize_32x32, SpriteColorFormat_256Color);
 }
 
 /* Pixel bakoitzak har ditzakeen 256 balioetako bakoitzari kolore bat esleitu PANTAILA NAGUSIAN. 0 balioa gardena da 
    eta definitu gabeko balioak beltzak. SPRITEARI KOLOREAK ESLEITZEKO ALDATU*/
 void PaletaNagusiaEzarri() {
-
+	/*
 	SPRITE_PALETTE[1] = RGB15(31,0,0); // 1 baliodun pixelak gorriak izango dira.
 	SPRITE_PALETTE[2] = RGB15(0,31,0); // 2 baliodun pixelak berdeak izango dira.
 	SPRITE_PALETTE[3] = RGB15(0,0,31); // 3 baliodun pixelak urdinak izango dira.
+	*/
+	SPRITE_PALETTE[0] = RGB15(24,24,24);
+	SPRITE_PALETTE[1] = RGB15(23,23,24);
+	SPRITE_PALETTE[2] = RGB15(24,23,24);
+	SPRITE_PALETTE[3] = RGB15(25,24,23);
+	SPRITE_PALETTE[4] = RGB15(24,23,22);
+	SPRITE_PALETTE[5] = RGB15(23,24,25);
+	SPRITE_PALETTE[6] = RGB15(23,26,31);
+	SPRITE_PALETTE[7] = RGB15(0,3,16);
+	SPRITE_PALETTE[8] = RGB15(24,23,23);
+	SPRITE_PALETTE[9] = RGB15(24,23,24);
+	SPRITE_PALETTE[10] = RGB15(23,23,24);
+	SPRITE_PALETTE[11] = RGB15(23,23,24);
 }
 
 /* 16x16 pixeleko Sprite baten definizioa erronbo bat marrazteko */
@@ -40,8 +53,9 @@ void PaletaNagusiaEzarri() {
    hurrengo lauak beheko ezkerreko koadrantean eta azkeneko lauak beheko eskuineko koadrantean. 
    Alboko irudian ikusten den bezala. */
 
-u8 erronbo[256] = 
+u8 mago[256] = 
 {
+	/*
 	0,0,0,0,0,0,2,2,0,0,0,0,0,2,2,2,	//	0,0,0,0,0,0,2,2, 2,2,0,0,0,0,0,0,
 	0,0,0,0,2,2,2,2,0,0,0,2,2,2,2,2,	//	0,0,0,0,0,2,2,2, 2,2,2,0,0,0,0,0,
 	0,0,2,2,2,2,2,2,0,2,2,2,2,2,2,2,	//	0,0,0,0,2,2,2,2, 2,2,2,2,0,0,0,0,
@@ -61,6 +75,24 @@ u8 erronbo[256] =
 	1,1,1,1,1,1,1,0,1,1,1,1,1,1,0,0,	//	0,0,0,0,1,1,1,1, 1,1,1,1,0,0,0,0,
 	1,1,1,1,1,0,0,0,1,1,1,1,0,0,0,0,	//	0,0,0,0,0,1,1,1, 1,1,1,0,0,0,0,0,
 	1,1,1,0,0,0,0,0,1,1,0,0,0,0,0,0,	//	0,0,0,0,0,0,1,1, 1,1,0,0,0,0,0,0,
+	*/
+	0	,	0	,	0	,	0	,	0	,	0	,	0	,	5	,	0	,	0	,	19	,	0	,	0	,	0	,	5	,	20	,	 // 	0	0	0	0	0	0	0	5	5	5	0	0	0	0	0	0
+	0	,	0	,	0	,	0	,	0	,	5	,	20	,	20	,	0	,	0	,	7	,	0	,	0	,	5	,	12	,	12	,	 // 	0	0	19	0	0	0	5	20	20	20	5	0	0	0	0	0
+	0	,	0	,	7	,	7	,	0	,	12	,	9	,	12	,	0	,	0	,	14	,	14	,	0	,	12	,	6	,	12	,	 // 	0	0	0	0	0	5	20	20	20	5	20	5	0	0	0	0
+	0	,	0	,	0	,	14	,	0	,	12	,	12	,	12	,	0	,	0	,	14	,	14	,	0	,	9	,	3	,	3	,	 // 	0	0	7	0	0	5	12	12	12	12	5	19	5	0	0	0
+	5	,	5	,	0	,	0	,	0	,	0	,	0	,	0	,	20	,	20	,	5	,	0	,	0	,	0	,	0	,	0	,	 // 	0	0	7	7	0	12	9	12	9	9	12	5	19	0	0	0
+	20	,	5	,	20	,	5	,	0	,	0	,	0	,	0	,	12	,	12	,	5	,	19	,	5	,	0	,	0	,	0	,	 // 	0	0	14	14	0	12	6	12	6	12	9	19	19	0	0	0
+	9	,	9	,	12	,	5	,	19	,	0	,	0	,	0	,	6	,	12	,	9	,	19	,	19	,	0	,	0	,	0	,	 // 	0	0	0	14	0	12	12	12	12	3	9	19	19	0	0	0
+	12	,	3	,	9	,	19	,	19	,	0	,	0	,	0	,	3	,	9	,	19	,	19	,	0	,	0	,	0	,	0	,	 // 	0	0	14	14	0	9	3	3	3	9	19	19	0	0	0	0
+	0	,	0	,	12	,	12	,	5	,	9	,	3	,	3	,	0	,	0	,	12	,	12	,	20	,	19	,	9	,	3	,	 // 	0	0	12	12	5	9	3	3	9	5	19	0	0	0	0	0
+	0	,	0	,	14	,	20	,	20	,	5	,	9	,	3	,	0	,	0	,	14	,	20	,	5	,	0	,	5	,	9	,	 // 	0	0	12	12	20	19	9	3	9	20	5	0	0	0	0	0
+	0	,	14	,	14	,	5	,	0	,	0	,	5	,	5	,	0	,	14	,	14	,	0	,	0	,	5	,	20	,	20	,	 // 	0	0	14	20	20	5	9	3	9	20	20	5	0	0	0	0
+	0	,	14	,	14	,	0	,	0	,	5	,	20	,	20	,	0	,	14	,	14	,	0	,	0	,	5	,	20	,	20	,	 // 	0	0	14	20	5	0	5	9	5	19	20	20	0	0	0	0
+	9	,	5	,	19	,	0	,	0	,	0	,	0	,	0	,	9	,	20	,	5	,	0	,	0	,	0	,	0	,	0	,	 // 	0	14	14	5	0	0	5	5	20	5	12	12	0	0	0	0
+	9	,	20	,	20	,	5	,	0	,	0	,	0	,	0	,	5	,	19	,	20	,	20	,	0	,	0	,	0	,	0	,	 // 	0	14	14	0	0	5	20	20	20	20	5	0	0	0	0	0
+	20	,	5	,	12	,	12	,	0	,	0	,	0	,	0	,	20	,	20	,	5	,	0	,	0	,	0	,	0	,	0	,	 // 	0	14	14	0	0	5	20	20	20	20	5	0	0	0	0	0
+	20	,	20	,	5	,	0	,	0	,	0	,	0	,	0	,	20	,	20	,	5	,	0	,	0	,	0	,	0	,	0	,	 // 	0	14	14	0	0	5	20	20	20	20	5	0	0	0	0	0
+
 };
 
 u8 erronboHandia[1024] = 
@@ -107,7 +139,7 @@ int i;
 	//16*16ko spriteentzako
 	for(i = 0; i < 16 * 16 / 2; i++) 
 	{	
-		gfxerronbo[i] = erronbo[i*2] | (erronbo[(i*2)+1]<<8);				
+		gfxmago[i] = mago[i*2] | (mago[(i*2)+1]<<8);				
 	}
 	//32*32ko spriteentzako
 	for(i = 0; i < 32 * 32 / 2; i++) 
@@ -119,7 +151,7 @@ int i;
 /* Funtzio honek erronbo bat irudikatzen du pantailako x,y posizioan. Pantailan ateratzea nahi den erronbo 
    bakoitzari indize desberdin bat esleitu behar zaio, 0 eta 126 balioen arteko indizea izan daiteke */
 
-void ErakutsiErronboa(int indizea, int x, int y)
+void erakutsiMagoa(int indizea, int x, int y)
 { 
  
 oamSet(&oamMain, // main graphics engine context
@@ -129,7 +161,7 @@ oamSet(&oamMain, // main graphics engine context
 		0,					  // this is the palette index if multiple palettes or the alpha value if bmp sprite	
 		SpriteSize_16x16,     
 		SpriteColorFormat_256Color, 
-		gfxerronbo,//+16*16/2,                  // pointer to the loaded graphics
+		gfxmago,//+16*16/2,                  // pointer to the loaded graphics
 		-1,                  // sprite rotation data  
 		false,               // double the size when rotating?
 		false,			// hide the sprite?
@@ -151,7 +183,7 @@ oamSet(&oamMain, // main graphics engine context
 		0,					  // this is the palette index if multiple palettes or the alpha value if bmp sprite	
 		SpriteSize_16x16,     
 		SpriteColorFormat_256Color, 
-		gfxerronbo,//+16*16/2,                  // pointer to the loaded graphics
+		gfxmago,//+16*16/2,                  // pointer to the loaded graphics
 		-1,                  // sprite rotation data  
 		false,               // double the size when rotating?
 		true,			// hide the sprite?
