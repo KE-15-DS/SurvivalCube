@@ -2,10 +2,9 @@
 - Menu info pantalla táctil
 - Menu erakutsi fondoa 
 - Info+menu fondoak sortu
-- 
+- mover lo de las coordenadas a koord.c
 
 # Importante
-- temporizadorea (60hz)
 - ingame
 - sprites de ingame
 - Jugador mira hacia donde va (izq/dcha)
@@ -15,3 +14,4 @@
 - Musica / sfx
 - HUD tiempo
 - escribir el lore
+- pantalla de arriba datos

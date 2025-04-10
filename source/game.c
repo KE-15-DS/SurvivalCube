@@ -1,13 +1,8 @@
 #include <stdlib.h>
-#include <nds/math.h>
+#include <nds.h>
 
 #include "game.h"
-
-/* FIXME: sqrt no va
-double modulua(koord_t k)
-{
-    return sqrt(k.x*k.x + k.y*k.y);
-}*/
+#include "spriteak.h"
 
 int distantzia(koord_t a, koord_t b)
 {
@@ -17,7 +12,14 @@ int distantzia(koord_t a, koord_t b)
 
 void tick()
 {
-
+    int i = 0;
+    for (;i < etsai_lista_len; i++)
+    {
+        // mugitu etsaiak
+        int_norabide_t n = lortu_norabidea(abs2rel(etsai_lista[i].pos));
+        etsai_lista[i].pos.x += n.x;
+        etsai_lista[i].pos.y += n.y;
+    }
 }
 
 void marraztu()
@@ -29,6 +31,11 @@ void marraztu()
         if (pantailan_dago(etsai_lista[i].pos))
         {
             // marraztu etsaia
+            // temporal hasta que haya sprite
+            koord_t pant = abs2pant(etsai_lista[i].pos);
+            pant.x-=8;
+            pant.y+=8;
+            erakutsiMagoa(i, pant.x, pant.y);
         }
     }
 }
@@ -52,8 +59,6 @@ etsaia_t etsaia_hasieratu()
 {
     etsaia_t e;
     e.hp = 2;
-    e.norantza.x = 0;
-    e.norantza.y = 0;
     e.abiadura = 5;
     return e;
 }
@@ -82,11 +87,48 @@ koord_t rel2pant(koord_t rel)
     return p;
 }
 
+float sqrt(float x)
+{
+    // Convert float to fixed-point
+    s32 fixed_num = floattof32(x);
+
+    // Calculate square root (result is also fixed-point)
+    s32 fixed_result = sqrtf32(fixed_num);
+
+    // Convert result back to float
+    return f32tofloat(fixed_result);
+}
+
+double modulua(koord_t k)
+{
+    return sqrt(k.x*k.x + k.y*k.y);
+}
+
+// rel(0,0)-rantz joateko norabide "optimoa"
+int_norabide_t lortu_norabidea(koord_t rel)
+{
+    int mod = modulua(rel);
+    double x = ((double)rel.x)/mod;
+    double y = ((double)rel.y)/mod;
+    int_norabide_t n; // espero 0,0 rekin hasieratzea.
+    if (x > 0.5)
+        n.x = 1;
+    else if (x < -0.5)
+        n.x = -1;
+    if (y > 0.5)
+        n.y = 1;
+    else if (y < -0.5)
+        n.y = -1;
+    return n;
+}
+
+ // tTODOD: testear que soy demasiado tondo to para esto
 koord_t abs2rel(koord_t abs)
 {
-    // TODO
-    koord_t r;
-    return r;
+    koord_t rel;
+    rel.x = abs.x - jokalari_pos.x;
+    rel.y = abs.y - jokalari_pos.y;
+    return rel;
 }
 
 koord_t abs2pant(koord_t abs)

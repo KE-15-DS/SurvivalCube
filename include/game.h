@@ -2,6 +2,7 @@
 #define GAME_H
 
 #include <stdbool.h>
+#include <stdint.h>
 
 /*
 
@@ -18,12 +19,16 @@ typedef struct  {
 typedef struct {
     // erlatiboak
     koord_t pos;
-    int hp;
-    // bere buruan zentratuta
-    koord_t norantza;
+    uint8_t hp;
     // zenbat frame mugitu baino lehen
-    int abiadura;
+    uint8_t abiadura;
 } etsaia_t;
+
+// Norabide bektore normalizatua borobilduta. Balio posibleak: -1, 0, 1
+typedef struct {
+    char x;
+    char y;
+} int_norabide_t;
 
 etsaia_t etsaia_hasieratu();
 //double modulua(koord_t k);
@@ -36,6 +41,7 @@ int random(int min, int max);
 koord_t rel2pant(koord_t rel);
 koord_t abs2pant(koord_t abs);
 bool pantailan_dago(koord_t rel);
+int_norabide_t lortu_norabidea(koord_t rel);
 
 // Aldagai globalak
 extern int EGOERA;

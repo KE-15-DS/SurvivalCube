@@ -1,9 +1,13 @@
 // 2024-2025 ikasturtea
+#ifndef SPRITEAK_H
+#define SPRITEAK_H
 
-extern u16* gfx;
-extern u16* gfx2;
-extern u16* gfx3;
-extern u16* gfxSub;
+#include <stdint.h>
+
+extern uint16_t* gfx;
+extern uint16_t* gfx2;
+extern uint16_t* gfx3;
+extern uint16_t* gfxSub;
 
 extern void memoriaErreserbatu();
 
@@ -36,3 +40,4 @@ extern void EzabatuErronboHandia(int indizea, int x, int y);
 
 /***********************2024-2025*******************************/
 
+#endif

@@ -28,23 +28,30 @@ void memoriaErreserbatu()
 /* Pixel bakoitzak har ditzakeen 256 balioetako bakoitzari kolore bat esleitu PANTAILA NAGUSIAN. 0 balioa gardena da 
    eta definitu gabeko balioak beltzak. SPRITEARI KOLOREAK ESLEITZEKO ALDATU*/
 void PaletaNagusiaEzarri() {
-	/*
-	SPRITE_PALETTE[1] = RGB15(31,0,0); // 1 baliodun pixelak gorriak izango dira.
-	SPRITE_PALETTE[2] = RGB15(0,31,0); // 2 baliodun pixelak berdeak izango dira.
-	SPRITE_PALETTE[3] = RGB15(0,0,31); // 3 baliodun pixelak urdinak izango dira.
-	*/
-	SPRITE_PALETTE[0] = RGB15(24,24,24);
-	SPRITE_PALETTE[1] = RGB15(23,23,24);
-	SPRITE_PALETTE[2] = RGB15(24,23,24);
-	SPRITE_PALETTE[3] = RGB15(25,24,23);
-	SPRITE_PALETTE[4] = RGB15(24,23,22);
-	SPRITE_PALETTE[5] = RGB15(23,24,25);
-	SPRITE_PALETTE[6] = RGB15(23,26,31);
-	SPRITE_PALETTE[7] = RGB15(0,3,16);
-	SPRITE_PALETTE[8] = RGB15(24,23,23);
-	SPRITE_PALETTE[9] = RGB15(24,23,24);
-	SPRITE_PALETTE[10] = RGB15(23,23,24);
-	SPRITE_PALETTE[11] = RGB15(23,23,24);
+	SPRITE_PALETTE[1] = RGB15(31,0,0);
+	SPRITE_PALETTE[2] = RGB15(31,31,31);
+	SPRITE_PALETTE[3] = RGB15(31,31,31);
+	SPRITE_PALETTE[4] = RGB15(0,31,0);
+	SPRITE_PALETTE[5] = RGB15(0,0,31);
+	SPRITE_PALETTE[6] = RGB15(0,0,0);
+	SPRITE_PALETTE[7] = RGB15(0,31,31);
+	SPRITE_PALETTE[8] = RGB15(31,0,31);
+	SPRITE_PALETTE[9] = RGB15(16,16,16);
+	SPRITE_PALETTE[10] = RGB15(25,25,25);
+	SPRITE_PALETTE[11] = RGB15(8,8,8);
+	SPRITE_PALETTE[12] = RGB15(31,19,0);
+	SPRITE_PALETTE[13] = RGB15(19,0,4);
+	SPRITE_PALETTE[14] = RGB15(25,0,0);
+	SPRITE_PALETTE[15] = RGB15(16,0,16);
+	SPRITE_PALETTE[16] = RGB15(25,19,31);
+	SPRITE_PALETTE[17] = RGB15(31,19,25);
+	SPRITE_PALETTE[18] = RGB15(23,21,21);
+	SPRITE_PALETTE[19] = RGB15(0,0,16);
+	SPRITE_PALETTE[20] = RGB15(0,16,16);
+	SPRITE_PALETTE[21] = RGB15(0,12,0);
+	SPRITE_PALETTE[22] = RGB15(16,16,0);
+	SPRITE_PALETTE[23] = RGB15(19,31,19);
+	SPRITE_PALETTE[24] = RGB15(31,31,19);
 }
 
 /* 16x16 pixeleko Sprite baten definizioa erronbo bat marrazteko */
@@ -55,27 +62,6 @@ void PaletaNagusiaEzarri() {
 
 u8 mago[256] = 
 {
-	/*
-	0,0,0,0,0,0,2,2,0,0,0,0,0,2,2,2,	//	0,0,0,0,0,0,2,2, 2,2,0,0,0,0,0,0,
-	0,0,0,0,2,2,2,2,0,0,0,2,2,2,2,2,	//	0,0,0,0,0,2,2,2, 2,2,2,0,0,0,0,0,
-	0,0,2,2,2,2,2,2,0,2,2,2,2,2,2,2,	//	0,0,0,0,2,2,2,2, 2,2,2,2,0,0,0,0,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,	//	0,0,0,2,2,2,2,2, 2,2,2,2,2,0,0,0,
- 
-	2,2,0,0,0,0,0,0,2,2,2,0,0,0,0,0,	//	0,0,2,2,2,2,2,2, 2,2,2,2,2,2,0,0,
-	2,2,2,2,0,0,0,0,2,2,2,2,2,0,0,0,	//	0,2,2,2,2,2,2,2, 2,2,2,2,2,2,2,0,
-	2,2,2,2,2,2,0,0,2,2,2,2,2,2,2,0,	//	2,2,2,2,2,2,2,2, 2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,	//	2,2,2,2,2,2,2,2, 2,2,2,2,2,2,2,2,
-
-	1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,	//	1,1,1,1,1,1,1,1, 1,1,1,1,1,1,1,1,
-	0,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,	//	1,1,1,1,1,1,1,1, 1,1,1,1,1,1,1,1,
-	0,0,0,1,1,1,1,1,0,0,0,0,1,1,1,1,	//	0,1,1,1,1,1,1,1, 1,1,1,1,1,1,1,0,
-	0,0,0,0,0,1,1,1,0,0,0,0,0,0,1,1,	//	0,0,1,1,1,1,1,1, 1,1,1,1,1,1,0,0,
-
-	1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,	//	0,0,0,1,1,1,1,1, 1,1,1,1,1,0,0,0,
-	1,1,1,1,1,1,1,0,1,1,1,1,1,1,0,0,	//	0,0,0,0,1,1,1,1, 1,1,1,1,0,0,0,0,
-	1,1,1,1,1,0,0,0,1,1,1,1,0,0,0,0,	//	0,0,0,0,0,1,1,1, 1,1,1,0,0,0,0,0,
-	1,1,1,0,0,0,0,0,1,1,0,0,0,0,0,0,	//	0,0,0,0,0,0,1,1, 1,1,0,0,0,0,0,0,
-	*/
 	0	,	0	,	0	,	0	,	0	,	0	,	0	,	5	,	0	,	0	,	19	,	0	,	0	,	0	,	5	,	20	,	 // 	0	0	0	0	0	0	0	5	5	5	0	0	0	0	0	0
 	0	,	0	,	0	,	0	,	0	,	5	,	20	,	20	,	0	,	0	,	7	,	0	,	0	,	5	,	12	,	12	,	 // 	0	0	19	0	0	0	5	20	20	20	5	0	0	0	0	0
 	0	,	0	,	7	,	7	,	0	,	12	,	9	,	12	,	0	,	0	,	14	,	14	,	0	,	12	,	6	,	12	,	 // 	0	0	0	0	0	5	20	20	20	5	20	5	0	0	0	0
@@ -173,7 +159,7 @@ oamUpdate(&oamMain);
 }
 
 /* Funtzio honek erronbo baten indizea pasata pantailatik ezabatzen du */
-void EzabatuErronboa(int indizea, int x, int y)
+void ezabatuMagoa(int indizea, int x, int y)
 {
 
 oamSet(&oamMain, // main graphics engine context
