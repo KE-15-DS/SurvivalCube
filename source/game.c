@@ -21,7 +21,7 @@ void tick()
         etsai_lista[i].pos.x += n.x;
         etsai_lista[i].pos.y += n.y;
     }
-    // TODO menos random
+    // TODO: menos random
     if (random(0,24) == 0)
     {
         spawnEnemy();
@@ -129,7 +129,7 @@ int_norabide_t lortu_norabidea(koord_t rel)
     return n;
 }
 
- // tTODOD: testear que soy demasiado tondo to para esto
+ // TODO: testear que soy demasiado tondo to para esto
 koord_t abs2rel(koord_t abs)
 {
     koord_t rel;
@@ -143,7 +143,7 @@ koord_t abs2pant(koord_t abs)
     return rel2pant(abs2rel(abs));
 }
 
-// TODO testear
+// TODO: testear
 int random(int min, int max)
 {
     return (rand() % (max-min+1)) + min;

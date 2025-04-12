@@ -1,3 +1,6 @@
+# NOTAS Y CAMBIOS
+- !!! jokoa01.c, zerbitzuErrutinak.c: erakutsiInfo() ha pasado a ser info(), erakutsiMenua() ha pasado a ser menu(). (razon: consistencia, erakutsiLoremIpsum() se va a usar para fondos)
+
 # Miscelanea (cualquier momento)
 - Menu info pantalla táctil
 - Menu erakutsi fondoa 
