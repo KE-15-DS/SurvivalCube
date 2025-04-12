@@ -20,13 +20,14 @@ adibide batean oinarrituta.
 
 int denb; // denbora neurtzen joateko; baloratu ea beharrezkoa den
 
-void erakutsiMenua()
+void menu()
 {
-	// TODO: menuaren fondoa jarri
+	erakutsiMenua();
 	iprintf("\x1b[22;5HOngi etorri gure jokora");
 }
 
-void erakutsiInfo()
+void erakutsiInfo() //TODO: izen KONSISTENTIAK JARRI. erakutsiInfo -> info
+
 {
 	// TODO: polito jarri
 	iprintf("\x1b[22;5HHonela jokatzen da: ");
@@ -63,22 +64,18 @@ void jokoa01()
 	DenbEtenBaimendu();
 	IME = 1;
 	
-	erakutsiMenua();
+	menu();
 	
 	while (1)
 	{	
 		switch (EGOERA)
 		{
 		case MENU:
-			
 			break;
 		case INFO:
-		
-			// TODO: Info fondoa gehitu
-			
-		 break; 
-
-		case GAMEOVER: break; // TODO: Game Over fondoa gehitu
+			break; 
+		case GAMEOVER: 
+			break; // TODO: Game Over fondoa gehitu
 		case INGAME:
 			// teklatuaren inkesta (geziak)
 			if (TeklaDetektatu())
