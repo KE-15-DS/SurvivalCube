@@ -20,30 +20,30 @@ adibide batean oinarrituta.
 
 int denb; // denbora neurtzen joateko; baloratu ea beharrezkoa den
 
-void menu()
+void menu() // !!!!!!! erakutsiMenua deitze zan, baina erakutsiLoremIpsum() izenak fondotarako erreserba ditzagun.
 {
-	erakutsiMenua();
+	// TODO: benetako menu bat in
+	erakutsiMenua(); // fondoa erakutsi
 	iprintf("\x1b[22;5HOngi etorri gure jokora");
 }
 
-void erakutsiInfo() //TODO: izen KONSISTENTIAK JARRI. erakutsiInfo -> info
-
+void info() // !!!!!!! erakutsiInfo deitze zan, baina erakutsiLoremIpsum() izenak fondotarako erreserba ditzagun.
 {
-	// TODO: polito jarri
+	// TODO: honentzat fondo guapardo bat in
+	erakutsiInfo();
 	iprintf("\x1b[22;5HHonela jokatzen da: ");
+}
+
+void gameOver()
+{
+	// TODO: game over en general programau
+	iprintf("\x1b[22;5HGame Over");
 }
 
 void jokoa01()
 {	
-
 	int tekla=0;
 	EGOERA=MENU;  // uste dut ez dela beharrezkoa
-	
-	/*
-	iprintf("\x1b[22;5HHau idazte proba bat da");	// Hau 22 lerroan eta 5 zutabean hasiko da idazten.
-													//Aldagai baten idatzi nahi izanez gero, %d komatxoen barruan eta 
-													 //komatxoen kanpoan aldagaiaren balioa.
-	iprintf("\x1b[23;5HAldagai proba. Balioa=%d", i);*/
 
 	//******************************2.JARDUERAN************************************************//
 	// ORDEN HONETAN ZEREGIN HAUEK EGITEA GOMENDATZEN DA:
@@ -75,7 +75,7 @@ void jokoa01()
 		case INFO:
 			break; 
 		case GAMEOVER: 
-			break; // TODO: Game Over fondoa gehitu
+			break; 
 		case INGAME:
 			// teklatuaren inkesta (geziak)
 			if (TeklaDetektatu())

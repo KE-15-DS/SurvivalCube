@@ -30,7 +30,7 @@ void tekEten ()
 		case SELECT:
 			EGOERA = INFO;
 			// TODO: jolasteko gida pantailaratu
-			erakutsiInfo();
+			info();
 			break;
 		}
 	}
@@ -39,7 +39,7 @@ void tekEten ()
 		if (SakatutakoTekla() == B)
 		{
 			EGOERA = MENU;
-			erakutsiMenua();
+			menu();
 		}
 	}
 }
