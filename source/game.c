@@ -22,7 +22,7 @@ void tick()
         etsai_lista[i].pos.y += n.y;
     }
     // TODO: menos random
-    if (random(0,24) == 0)
+    if (random_int(0,24) == 0)
     {
         spawnEnemy();
     }
@@ -53,8 +53,8 @@ void spawnEnemy()
 
     if (etsai_lista_len < 100)
     {
-        int x = random(min_dist, max_dist);
-        int y = random(min_dist, max_dist);
+        int x = random_int(min_dist, max_dist);
+        int y = random_int(min_dist, max_dist);
         etsaia_t e = etsaia_hasieratu();
         e.pos.x = x;
         e.pos.y = y;
@@ -144,7 +144,7 @@ koord_t abs2pant(koord_t abs)
 }
 
 // TODO: testear
-int random(int min, int max)
+int random_int(int min, int max)
 {
     return (rand() % (max-min+1)) + min;
 }
