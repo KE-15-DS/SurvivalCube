@@ -14,6 +14,9 @@ adibide batean oinarrituta.
 #include "grafikoak.h"
 #include "spriteak.h"
 
+// libnds bertsio berriekin konpatibilitatea
+// vramSetMainBanks funtzioa ez dela existitzen esaten badizu, deskomentatu hurrengo lerroa
+//#define vramSetMainBanks vramSetPrimaryBanks
 
 void hasieratuBideoa() {
     /*  Bi pantailatan irudiak erakutsi ahal izateko memoria mapeatu */
