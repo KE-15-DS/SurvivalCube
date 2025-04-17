@@ -96,7 +96,7 @@ koord_t rel2pant(koord_t rel)
     return p;
 }
 
-float sqrt(float x)
+float fast_sqrt(float x)
 {
     // Convert float to fixed-point
     s32 fixed_num = floattof32(x);
@@ -108,7 +108,7 @@ float sqrt(float x)
 
 double modulua(koord_t k)
 {
-    return sqrt(k.x*k.x + k.y*k.y);
+    return fast_sqrt(k.x*k.x + k.y*k.y);
 }
 
 // rel(0,0)-rantz joateko norabide "optimoa"
