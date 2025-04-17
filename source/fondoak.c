@@ -26,6 +26,7 @@ static const int DMA_CHANNEL = 3;
 /* Pantailaratu nahi den grafiko bakoitzerako horrelako prozedura bat idatzi behar da */
 
 // vvvvvvvvvvvvvv hau dana ezabatu vvvvvvvvvvvvvvvv
+/* ok
 void erakutsiAtea() {
 	
 	dmaCopyHalfWords(DMA_CHANNEL,
@@ -42,6 +43,7 @@ void erakutsiAteaIrekita() {
                      AteaIrekitaBitmapLen); // Luzera (bytetan); automatikoki sortzen den aldagaia
 }
 // ^^^^^^^^^^^^^^ hau dana ezabatu ^^^^^^^^^^^^^^^
+*/
 
 // top 5 pruebas mas experimentales que ni tri-line se podria esperar
 void erakutsiMenua() {

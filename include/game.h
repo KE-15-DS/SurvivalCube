@@ -37,7 +37,7 @@ void tick();
 void marraztu();
 void spawnEnemy();
 koord_t rel2abs(koord_t rel);
-int random(int min, int max);
+int random_int(int min, int max);
 koord_t rel2pant(koord_t rel);
 koord_t abs2pant(koord_t abs);
 koord_t abs2rel(koord_t abs);
