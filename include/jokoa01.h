@@ -13,6 +13,7 @@ void erakutsiInfo();
 */
 void menu();
 void info();
+void inGameInkesta();
 
 #endif
 /***********************2024-2025*******************************/
