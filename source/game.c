@@ -45,7 +45,6 @@ void marraztu()
     }
 }
 
-// TODO honela koadrante batean baino ez ditu spawneatzen
 void spawnEnemy()
 {
     static const int min_dist = 40;
@@ -55,6 +54,11 @@ void spawnEnemy()
     {
         int x = random_int(min_dist, max_dist);
         int y = random_int(min_dist, max_dist);
+        if (random_int(0,1))
+            x = -x;
+        if (random_int(0,1))
+            y = -y;
+        
         etsaia_t e = etsaia_hasieratu();
         koord_t k = {x,y};
         e.pos = rel2abs(k);
