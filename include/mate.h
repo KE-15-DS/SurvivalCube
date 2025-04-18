@@ -24,7 +24,7 @@ typedef struct {
     char y;
 } int_norabide_t;
 
-int distantzia(koord_t a, koord_t b);
+float distantzia(koord_t a, koord_t b);
 koord_t rel2abs(koord_t rel);
 int random_int(int min, int max);
 koord_t rel2pant(koord_t rel);

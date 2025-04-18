@@ -8,7 +8,7 @@
 
 
 typedef struct {
-    // erlatiboak
+    // ABSOLUTUAK
     koord_t pos;
     uint8_t hp;
     // zenbat frame mugitu baino lehen
@@ -27,6 +27,6 @@ extern int LVL;
 extern int HP;
 extern etsaia_t etsai_lista[100];
 extern int etsai_lista_len;
-extern koord_t jokalari_pos;
+extern koord_t jokalari_pos;  //abs
 
 #endif

@@ -3,10 +3,10 @@
 #include "mate.h"
 #include "game.h"
 
-int distantzia(koord_t a, koord_t b)
+float distantzia(koord_t a, koord_t b)
 {
-    // TODO: b - a 
-    return 0;
+    koord_t k = {b.x-a.x, b.y-a.y};
+    return modulua(k);
 }
 
 
@@ -47,18 +47,18 @@ float modulua(koord_t k)
 // rel(0,0)-rantz joateko norabide "optimoa"
 int_norabide_t lortu_norabidea(koord_t rel)
 {
-    int mod = modulua(rel);
-    double x = ((double)rel.x)/mod;
-    double y = ((double)rel.y)/mod;
-    int_norabide_t n; // espero 0,0 rekin hasieratzea.
-    if (x > 0.5)
-        n.x = 1;
+    float mod = modulua(rel);
+    float x = rel.x/mod;
+    float y = rel.y/mod;
+    int_norabide_t n = {0,0};
+    if (x > 0.5)  // = distantzia
+        n.x = -1;  // orduan hurbildu
     else if (x < -0.5)
-        n.x = -1;
+        n.x = 1;
     if (y > 0.5)
-        n.y = 1;
-    else if (y < -0.5)
         n.y = -1;
+    else if (y < -0.5)
+        n.y = 1;
     return n;
 }
 
