@@ -91,7 +91,7 @@ void inGameInkesta()
 {
 	if (TeklaDetektatu())  // and denbora bat pasa da, 60px/s abiadura gehiegi da
 	{
-		iprintf("\x1b[3;0HTEKLAK_DAT: %d", TEKLAK_DAT);
+		//iprintf("\x1b[3;0HTEKLAK_DAT: %d", TEKLAK_DAT);
 		if (~TEKLAK_DAT & BIT(6))  // gora
 			jokalari_pos.y--;
 		if (~TEKLAK_DAT & BIT(7))  // behera
