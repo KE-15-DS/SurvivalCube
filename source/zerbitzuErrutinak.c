@@ -54,9 +54,9 @@ void tenpEten()
 		// fondoa
 		// etsaiak
 		// player
+		inGameInkesta();
 		tick();
 		marraztu();
-		inGameInkesta();
 		// debug
 		iprintf("\x1b[0;0Hjokalari_pos: (%d,%d)", jokalari_pos.x, jokalari_pos.y);
 		iprintf("\x1b[1;0Hetsai_lista_len: %d", etsai_lista_len);
