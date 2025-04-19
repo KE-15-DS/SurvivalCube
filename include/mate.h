@@ -19,9 +19,10 @@ typedef struct  {
 } koord_t;
 
 // Norabide bektore normalizatua borobilduta. Balio posibleak: -1, 0, 1
+// Berez dena 6 bitetan konprimatu ahalko litzateke
 typedef struct {
-    char x;
-    char y;
+    short x;
+    short y;
 } int_norabide_t;
 
 float distantzia(koord_t a, koord_t b);

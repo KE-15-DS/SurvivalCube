@@ -1,5 +1,7 @@
 #include <stdlib.h>
 #include <nds.h>
+// debug
+#include <stdio.h>
 
 #include "game.h"
 #include "spriteak.h"
@@ -12,9 +14,10 @@ void tick()
     {
         // mugitu etsaiak
         // TODO kontrolatu denbora
-        //int_norabide_t n = lortu_norabidea(abs2rel(etsai_lista[i].pos));
-        //etsai_lista[i].pos.x += n.x;
-        //etsai_lista[i].pos.y += n.y;
+        int_norabide_t n = lortu_norabidea(abs2rel(etsai_lista[i].pos));
+        bool pd = pantailan_dago(abs2pant(etsai_lista[i].pos));
+        etsai_lista[i].pos.x += n.x;
+        etsai_lista[i].pos.y += n.y;
     }
     // TODO: menos random
     if (random_int(0,24) == 0)
