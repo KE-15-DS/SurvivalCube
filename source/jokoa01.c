@@ -66,8 +66,8 @@ void jokoa01()
 	
 	menu();
 	
-	while (1)
-	{	
+	while (1)  // libnds 2.0: while(1) --> while(pmMainLoop())
+	{
 		switch (EGOERA)
 		{
 		case MENU:
@@ -78,20 +78,27 @@ void jokoa01()
 			break; 
 		case INGAME:
 			// teklatuaren inkesta (geziak)
-			if (TeklaDetektatu())
-			{
-				if (~TEKLAK_DAT & (1<<6))  // gora
-					jokalari_pos.y--;
-				if (~TEKLAK_DAT & (1<<7))  // behera
-					jokalari_pos.y++;
-				if (~TEKLAK_DAT & (1<<4))  // eskubi
-					jokalari_pos.x++;
-				if (~TEKLAK_DAT & (1<<5))  // ezkerra
-					jokalari_pos.x--;
-			}
+			
 			break;
 		}
+		//iprintf("\x1b[4;0H me cago en su mare");
 	}
 	// Bukaeran etenak galarazi.
 	IME = 0;
+}
+
+void inGameInkesta()
+{
+	if (TeklaDetektatu())  // and denbora bat pasa da, 60px/s abiadura gehiegi da
+	{
+		//iprintf("\x1b[3;0HTEKLAK_DAT: %d", TEKLAK_DAT);
+		if (~TEKLAK_DAT & BIT(6))  // gora
+			jokalari_pos.y--;
+		if (~TEKLAK_DAT & BIT(7))  // behera
+			jokalari_pos.y++;
+		if (~TEKLAK_DAT & BIT(4))  // eskubi
+			jokalari_pos.x++;
+		if (~TEKLAK_DAT & BIT(5))  // ezkerra
+			jokalari_pos.x--;
+	}
 }
