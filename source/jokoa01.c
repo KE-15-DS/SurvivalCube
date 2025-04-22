@@ -34,6 +34,12 @@ void info() // !!!!!!! erakutsiInfo deitze zan, baina erakutsiLoremIpsum() izena
 	iprintf("\x1b[22;5HHonela jokatzen da: ");
 }
 
+void jokoaHasieratu()
+{
+	//TODO: jokoa hasieratu, tontolin.
+	erakutsiIngame();
+}
+
 void gameOver()
 {
 	// TODO: game over en general programau
@@ -92,13 +98,14 @@ void inGameInkesta()
 	if (TeklaDetektatu())  // and denbora bat pasa da, 60px/s abiadura gehiegi da
 	{
 		//iprintf("\x1b[3;0HTEKLAK_DAT: %d", TEKLAK_DAT);
-		if (~TEKLAK_DAT & BIT(6))  // gora
+		// mapari 0-1000ko limiteak jarri dizkiot, halare erraldoia iruitze zait
+		if (~TEKLAK_DAT & BIT(6) && jokalari_pos.y > 0)  // gora
 			jokalari_pos.y--;
-		if (~TEKLAK_DAT & BIT(7))  // behera
+		if (~TEKLAK_DAT & BIT(7) && jokalari_pos.y < 1000)  // behera
 			jokalari_pos.y++;
-		if (~TEKLAK_DAT & BIT(4))  // eskubi
+		if (~TEKLAK_DAT & BIT(4) && jokalari_pos.x < 1000)  // eskubi
 			jokalari_pos.x++;
-		if (~TEKLAK_DAT & BIT(5))  // ezkerra
+		if (~TEKLAK_DAT & BIT(5) && jokalari_pos.x > 0)  // ezkerra
 			jokalari_pos.x--;
 	}
 }
