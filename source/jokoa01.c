@@ -17,6 +17,8 @@ adibide batean oinarrituta.
 #include "zerbitzuErrutinak.h"
 #include "fondoak.h"
 #include "game.h"
+#include "spriteak.h"
+
 
 int denb; // denbora neurtzen joateko; baloratu ea beharrezkoa den
 
@@ -25,26 +27,31 @@ void menu() // !!!!!!! erakutsiMenua deitze zan, baina erakutsiLoremIpsum() izen
 	// TODO: benetako menu bat in
 	erakutsiMenua(); // fondoa erakutsi
 	iprintf("\x1b[22;5HOngi etorri gure jokora");
+	EGOERA=MENU;
 }
 
 void info() // !!!!!!! erakutsiInfo deitze zan, baina erakutsiLoremIpsum() izenak fondotarako erreserba ditzagun.
 {
 	// TODO: honentzat fondo guapardo bat in
 	erakutsiInfo();
-	iprintf("\x1b[22;5HHonela jokatzen da:   ");
-}
-
-void jokoaHasieratu()
-{
-	//TODO: jokoa hasieratu, tontolin.
-	erakutsiMagoa(101, 128-8, 96-8);
-	erakutsiIngame();
+	iprintf("\x1b[22;5HHonela jokatzen da: ");
+	EGOERA=INFO;
 }
 
 void gameOver()
 {
 	// TODO: game over en general programau
 	iprintf("\x1b[22;5HGame Over");
+	EGOERA=GAMEOVER;
+}
+
+void inGame()
+{
+	erakutsiInGame();
+	erakutsiMagoa(101, 128-8, 96-8);
+	HP = 100;
+	iprintf("\x1b[20;0HHP: %d", HP);
+	EGOERA=INGAME;
 }
 
 void jokoa01()

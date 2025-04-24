@@ -26,6 +26,7 @@ int HP = 100;
 etsaia_t etsai_lista[100];  // uste dut horrela hasieratzen dela
 int etsai_lista_len = 0;
 koord_t jokalari_pos;
+int IFRAMES = 0;
 
 int main(void) 
 {

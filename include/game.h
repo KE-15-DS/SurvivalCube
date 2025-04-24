@@ -20,11 +20,13 @@ void tick();
 void marraztu();
 void spawnEnemy();
 bool pantailan_dago(koord_t rel);
+bool talka(koord_t rel);
 
 // Aldagai globalak
 extern int EGOERA;
 extern int LVL;
 extern int HP;
+extern int IFRAMES;
 extern etsaia_t etsai_lista[100];
 extern int etsai_lista_len;
 extern koord_t jokalari_pos;  //abs
