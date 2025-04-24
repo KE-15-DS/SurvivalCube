@@ -52,7 +52,7 @@ void gameOver()
 void inGame()
 {
 	erakutsiInGame();
-	erakutsiMagoa(101, 128-8, 96-8);
+	erakutsiMagoa(JOKALARI_SPRITE_INDIZEA, PANT_ERDI_X-8, PANT_ERDI_Y-8);
 	HP = 100;
 	iprintf("\x1b[20;0HHP: %d", HP);
 	EGOERA=INGAME;
@@ -114,12 +114,22 @@ void inGameInkesta()
 		// FIXME: etsaiak ere barruan geratzea falta da.
 		// TODO: sortu "barrera bisual" bat maparen inguruan, jokalariak mugak ikusteko
 		if (~TEKLAK_DAT & BIT(6) && jokalari_pos.y > 0)  // gora
+		{
 			jokalari_pos.y--;
+		}
 		if (~TEKLAK_DAT & BIT(7) && jokalari_pos.y < 500)  // behera
+		{
 			jokalari_pos.y++;
+		}
 		if (~TEKLAK_DAT & BIT(4) && jokalari_pos.x < 500)  // eskubi
+		{
 			jokalari_pos.x++;
+			erakutsiMagoaNorantza(JOKALARI_SPRITE_INDIZEA, PANT_ERDI_X-8, PANT_ERDI_Y-8, true);
+		}
 		if (~TEKLAK_DAT & BIT(5) && jokalari_pos.x > 0)  // ezkerra
+		{
 			jokalari_pos.x--;
+			erakutsiMagoaNorantza(JOKALARI_SPRITE_INDIZEA, PANT_ERDI_X-8, PANT_ERDI_Y-8, false);
+		}
 	}
 }

@@ -3,6 +3,7 @@
 #define SPRITEAK_H
 
 #include <stdint.h>
+#include <stdbool.h>
 
 extern uint16_t* gfx;
 extern uint16_t* gfx2;
@@ -27,6 +28,8 @@ extern void erakutsiMagoa(int indizea, int x, int y);
 /* Funtzio honek erronbo bat irudikatzen du pantailako x, y posizioan. Pantailan ateratzea nahi den erronbo 
    bakoitzari indize desberdin bat esleitu behar zaio, 0 eta 126 balioen arteko indizea izan daiteke. */
 
+extern void erakutsiMagoaNorantza(int indizea, int x, int y, bool eskumarantz);
+
 extern void ezabatuMagoa(int indizea, int x, int y);
 /* Funtzio honek erronbo baten indizea pasata pantailatik ezabatzen du */
 
@@ -37,7 +40,8 @@ extern void ErakutsiErronboHandia(int indizea, int x, int y);
 extern void EzabatuErronboHandia(int indizea, int x, int y);
 /* Funtzio honek erronbo handi baten indizea pasata pantailatik ezabatzen du */
 
-
-/***********************2024-2025*******************************/
+#define PANT_ERDI_X 128
+#define PANT_ERDI_Y 96
+#define JOKALARI_SPRITE_INDIZEA 101
 
 #endif

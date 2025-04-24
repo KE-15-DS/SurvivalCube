@@ -37,12 +37,10 @@ int main(void)
 	HasieratuGrafikoakSpriteak();
 	hasieratuMusika();
 
-	consoleDemoInit();  // beharrezkoa al da?
-
 	// Zuen jokoari dei egingo zaio hemendik
 	jokoa01();
 
-	return(0);
+	return(0); // AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
 }
 

@@ -40,7 +40,7 @@ void tick()
             {
                 iprintf("\x1b[20;0HHP: %d        ", HP);
             }
-            IFRAMES = 40;  // adibidez
+            IFRAMES = 20;  // adibidez
         }
     }
     // TODO: menos random
@@ -124,5 +124,5 @@ bool pantailan_dago(koord_t pant)
 // TODO agian hobetu
 bool talka(koord_t rel)
 {
-    return (rel.x <= 5 && rel.x >= -5) || (rel.y <= 5 && rel.y >= -5);
+    return (rel.x <= 5 && rel.x >= -5) && (rel.y <= 5 && rel.y >= -5);
 }
