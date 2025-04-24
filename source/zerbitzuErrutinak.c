@@ -27,7 +27,6 @@ void tekEten ()
 			EGOERA = INGAME;
 			// TODO: gauzak egin: hasieraketak, bla bla
 			jokoaHasieratu();
-			erakutsiMagoa(101, 128-8, 96-8);
 			break;
 		case SELECT:
 			EGOERA = INFO;

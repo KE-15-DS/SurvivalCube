@@ -31,12 +31,13 @@ void info() // !!!!!!! erakutsiInfo deitze zan, baina erakutsiLoremIpsum() izena
 {
 	// TODO: honentzat fondo guapardo bat in
 	erakutsiInfo();
-	iprintf("\x1b[22;5HHonela jokatzen da: ");
+	iprintf("\x1b[22;5HHonela jokatzen da:   ");
 }
 
 void jokoaHasieratu()
 {
 	//TODO: jokoa hasieratu, tontolin.
+	erakutsiMagoa(101, 128-8, 96-8);
 	erakutsiIngame();
 }
 
@@ -84,7 +85,6 @@ void jokoa01()
 			break; 
 		case INGAME:
 			// teklatuaren inkesta (geziak)
-			
 			break;
 		}
 		//iprintf("\x1b[4;0H me cago en su mare");
@@ -98,12 +98,14 @@ void inGameInkesta()
 	if (TeklaDetektatu())  // and denbora bat pasa da, 60px/s abiadura gehiegi da
 	{
 		//iprintf("\x1b[3;0HTEKLAK_DAT: %d", TEKLAK_DAT);
-		// mapari 0-1000ko limiteak jarri dizkiot, halare erraldoia iruitze zait
+		// mapari 0-500eko limiteak jarri dizkiot
+		// FIXME: etsaiak ere barruan geratzea falta da.
+		// TODO: sortu "barrera bisual" bat maparen inguruan, jokalariak mugak ikusteko
 		if (~TEKLAK_DAT & BIT(6) && jokalari_pos.y > 0)  // gora
 			jokalari_pos.y--;
-		if (~TEKLAK_DAT & BIT(7) && jokalari_pos.y < 1000)  // behera
+		if (~TEKLAK_DAT & BIT(7) && jokalari_pos.y < 500)  // behera
 			jokalari_pos.y++;
-		if (~TEKLAK_DAT & BIT(4) && jokalari_pos.x < 1000)  // eskubi
+		if (~TEKLAK_DAT & BIT(4) && jokalari_pos.x < 500)  // eskubi
 			jokalari_pos.x++;
 		if (~TEKLAK_DAT & BIT(5) && jokalari_pos.x > 0)  // ezkerra
 			jokalari_pos.x--;
