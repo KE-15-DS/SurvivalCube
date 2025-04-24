@@ -12,15 +12,22 @@ void tick()
     if (IFRAMES > 0)
         IFRAMES--;
 
+    static int mugituDelay = 0;
+    if (mugituDelay == 2)
+        mugituDelay = 0;
+
     int i = 0;
     for (;i < etsai_lista_len; i++)
     {
         koord_t* k = &etsai_lista[i].pos;  // gutxiago idazteko / arraya indexatzea aurrezteko?
         // mugitu etsaiak
         // TODO kontrolatu denbora
-        int_norabide_t n = lortu_norabidea(abs2rel(*k));
-        k->x += n.x;
-        k->y += n.y;
+        if (mugituDelay == 0)
+        {
+            int_norabide_t n = lortu_norabidea(abs2rel(*k));
+            k->x += n.x;
+            k->y += n.y;
+        }
 
         if (IFRAMES ==  0 && talka(abs2rel(*k)))
         {
@@ -41,6 +48,8 @@ void tick()
     {
         spawnEnemy();
     }
+
+    mugituDelay++;
 }
 
 void marraztu()
