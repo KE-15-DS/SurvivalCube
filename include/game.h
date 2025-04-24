@@ -29,4 +29,11 @@ extern etsaia_t etsai_lista[100];
 extern int etsai_lista_len;
 extern koord_t jokalari_pos;  //abs
 
+//hp barra
+
+typedef struct {
+    char bizitza[12];
+    int HP_totala;
+} jokalari_HP;
+
 #endif

@@ -85,3 +85,24 @@ bool pantailan_dago(koord_t pant)
     // 8ko margina "pop"ik ez egoteko
     return pant.x >= -8 && pant.y >= -8 && pant.x <= 256+8 && pant.y <= 192+8;
 }
+jokalari_HP jokalariaren_HP_hasieratu(){
+    jokalari_HP HP;
+    HP.bizitza[12] = "[##########]";
+    HP.HP_totala = 100;
+}
+//TODO talka() "jokalariaren eta etsailaren artekoa" no se si deberia estar en game.c
+void hpMeDuele(){
+    int lag = 10;
+    HP.HP_totala -= 10;
+
+     if (lag>0){
+        HP.bizitza[lag] = '';
+     }
+     lag--;
+    
+}
+
+// cuando tengamos la hitbox tanto del enemigo y del jokalari cambiamos talka   
+bool talka(koord_t jokalariPos , koord_t etsaiPos){
+    return jokalariPos == etsaiPos;
+}

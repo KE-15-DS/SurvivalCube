@@ -19,3 +19,4 @@
 - HUD tiempo
 - escribir el lore
 - pantalla de arriba datos
+

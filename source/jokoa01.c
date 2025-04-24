@@ -109,3 +109,5 @@ void inGameInkesta()
 			jokalari_pos.x--;
 	}
 }
+
+
