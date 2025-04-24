@@ -6,7 +6,7 @@
 #include "game.h"
 #include "spriteak.h"
 
-//jijijijidjasofijdaslkfjlñasdhfñjkadshjfñklasdhjfñlasdjñflkasdjñlfkas
+
 
 void tick()
 {
