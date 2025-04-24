@@ -3,9 +3,7 @@
 
 # Miscelanea (cualquier momento)
 - Menu info pantalla táctil
-- Menu erakutsi fondoa 
 - Info+menu fondoak sortu
-- mover lo de las coordenadas a koord.c
 
 # Importante
 - ingame
