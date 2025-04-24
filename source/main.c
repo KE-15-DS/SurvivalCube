@@ -35,12 +35,10 @@ int main(void)
 	srand(time(NULL));
 	HasieratuGrafikoakSpriteak();
 
-	consoleDemoInit();  // beharrezkoa al da?
-
 	// Zuen jokoari dei egingo zaio hemendik
 	jokoa01();
 
-	return(0);
+	return(0); // AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
 }
 
