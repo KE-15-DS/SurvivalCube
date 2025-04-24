@@ -40,7 +40,7 @@ void erakutsiInfo() {
                      InfoBitmapLen); // Luzera (bytetan); automatikoki sortzen den aldagaia
 }
 
-void erakutsiIngame() {
+void erakutsiInGame() {
 
 	dmaCopyHalfWords(DMA_CHANNEL,
                      IngameBitmap, // Automatikoki sortzen den aldagaia

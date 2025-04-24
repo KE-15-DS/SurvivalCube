@@ -1,23 +1,40 @@
 #include <stdlib.h>
 #include <nds.h>
-// debug
 #include <stdio.h>
 
 #include "game.h"
 #include "spriteak.h"
+#include "jokoa01.h"
 
 
 void tick()
 {
+    if (IFRAMES > 0)
+        IFRAMES--;
+
     int i = 0;
     for (;i < etsai_lista_len; i++)
     {
+        koord_t* k = &etsai_lista[i].pos;  // gutxiago idazteko / arraya indexatzea aurrezteko?
         // mugitu etsaiak
-        // TODO: kontrolatu denbora
-        int_norabide_t n = lortu_norabidea(abs2rel(etsai_lista[i].pos));
-        bool pd = pantailan_dago(abs2pant(etsai_lista[i].pos));
-        etsai_lista[i].pos.x += n.x;
-        etsai_lista[i].pos.y += n.y;
+        // TODO kontrolatu denbora
+        int_norabide_t n = lortu_norabidea(abs2rel(*k));
+        k->x += n.x;
+        k->y += n.y;
+
+        if (IFRAMES ==  0 && talka(abs2rel(*k)))
+        {
+            HP--;
+            if (HP <= 0)
+            {
+                gameOver();
+            }
+            else
+            {
+                iprintf("\x1b[20;0HHP: %d        ", HP);
+            }
+            IFRAMES = 40;  // adibidez
+        }
     }
     // TODO: menos random
     if (random_int(0,24) == 0)
@@ -92,4 +109,11 @@ bool pantailan_dago(koord_t pant)
 {
     // 8ko margina "pop"ik ez egoteko
     return pant.x >= -8 && pant.y >= -8 && pant.x <= 256+8 && pant.y <= 192+8;
+}
+
+// rel-en dagoen etsaiak jokalariarekin talka egin al duen itzultzen du
+// TODO agian hobetu
+bool talka(koord_t rel)
+{
+    return (rel.x <= 5 && rel.x >= -5) || (rel.y <= 5 && rel.y >= -5);
 }

@@ -7,13 +7,11 @@ jokoa01
 #define JOKOA01_H
 
 void jokoa01();
-/*
-void erakutsiMenua();
-void erakutsiInfo();
-*/
 void menu();
 void info();
 void inGameInkesta();
+void inGame();
+void gameOver();
 
 #endif
 /***********************2024-2025*******************************/
