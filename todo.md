@@ -13,7 +13,7 @@
 
 # Para mejorar
 - Animaciones sprites
-- Musica / sfx
+- Musica (listo) / sfx (no listo)
 - HUD tiempo
 - escribir el lore
 - pantalla de arriba datos
