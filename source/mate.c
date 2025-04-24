@@ -62,7 +62,6 @@ int_norabide_t lortu_norabidea(koord_t rel)
     return n;
 }
 
- // TODO: testear que soy demasiado tondo to para esto
 koord_t abs2rel(koord_t abs)
 {
     koord_t rel;
