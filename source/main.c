@@ -18,6 +18,7 @@ adibide batean oinarrituta.
 #include "spriteak.h"
 #include "jokoa01.h"
 #include "game.h"
+#include "musika.h"
 
 // aldagai globalen hasieraketak
 int EGOERA = MENU;
@@ -34,6 +35,7 @@ int main(void)
 	jokalari_pos.y = 250;  // TODO maparen limiteak
 	srand(time(NULL));
 	HasieratuGrafikoakSpriteak();
+	hasieratuMusika();
 
 	consoleDemoInit();  // beharrezkoa al da?
 
