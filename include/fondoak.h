@@ -13,6 +13,7 @@ extern void erakutsiAteaIrekita();
 */
 void erakutsiMenua();
 void erakutsiInfo();
+void erakutsiInGame();
 #endif
 /***********************2024-2025*******************************/
 
