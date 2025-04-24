@@ -11,7 +11,7 @@
 - ingame
 - sprites de ingame
 - Jugador mira hacia donde va (izq/dcha)
-- q no se salgan las cosas del limite del mapa
+- q no se salgan las cosas del limite del mapa (hecho) 
 
 # Para mejorar
 - Animaciones sprites
