@@ -19,3 +19,13 @@
 - escribir el lore
 - pantalla de arriba datos
 - subir de nivel
+
+# Lo que ya está hecho
+- Pegar (sin gráficos) y matar enemigos
+- Moverse
+- Spawnear enemigos
+- Límites del mapa
+- Los enemigos te hacen daño si te chocas
+- Musiquita
+- Que se gire el personaje
+- Paso entre egoeras
