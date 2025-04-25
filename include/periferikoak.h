@@ -14,6 +14,7 @@ extern void DenbEtenBaimendu();
 extern void DenbEtenGalarazi();
 extern void ErlojuaMartxanJarri();
 extern void ErlojuaGelditu();
+extern void ukimenPantailaInkesta();
 
 /***********************2024-2025*******************************/
 

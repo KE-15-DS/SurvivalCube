@@ -5,8 +5,8 @@
 #include <stdint.h>
 
 #include "mate.h"
-
-
+extern char bizitza_barra[12];
+extern int indice_bizitza_barra;
 typedef struct {
     // ABSOLUTUAK
     koord_t pos;

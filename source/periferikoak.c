@@ -7,6 +7,7 @@ periferikoak.c
 #include <nds.h>
 #include <stdio.h>
 #include "definizioak.h"
+#include "periferikoak.h"
 
 
 int tekla; // Sakatutako tekla gordetzeko aldagaia; baloratu ea behar den
@@ -109,6 +110,25 @@ void ErlojuaGelditu()
 	// HEMEN IDATZI BEHAR DUZUE ZUEN KODEA
 	DENB0_KNT &= ~128;
 }
+
+void ukimenPantailaInkesta(){
+	touchPosition ukimena;
+
+	// botoien eta antalla taktilaren egoera irakurri
+
+	scanKeys();
+	touchRead(&ukimena);
+
+	iprintf("\x1b[22;0H]");
+	if (keysHeld() & KEY_TOUCH){
+		iprintf("stylus ikutzen X: %3d Y: %3d", ukimena.px, ukimena.py);
+
+	} else {
+		iprintf("ez dago ukimenik");
+	}
+
+}
+
 
 /***********************2024-2025*******************************/
 

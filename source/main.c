@@ -28,6 +28,8 @@ etsaia_t etsai_lista[100];  // uste dut horrela hasieratzen dela
 int etsai_lista_len = 0;
 koord_t jokalari_pos;
 int IFRAMES = 0;
+char bizitza_barra[12] = "[##########]";
+int indice_bizitza_barra = 10;
 bool erasoa_ezkerrean = false;
 bool erasoa_eskuman = false;
 int eraso_cooldown = 0;

@@ -5,6 +5,7 @@
 #include "game.h"
 #include "spriteak.h"
 #include "jokoa01.h"
+#include "periferikoak.h"
 
 
 void tick()
@@ -55,7 +56,10 @@ void tick()
                 }
                 else
                 {
+                    bizitza_barra[indice_bizitza_barra] = ' ';
+                    indice_bizitza_barra --;
                     iprintf("\x1b[20;0HHP: %d        ", HP);
+                    iprintf("\x1b[19;0HHP: %s        ", bizitza_barra);
                 }
                 IFRAMES = 20;  // adibidez
             }
@@ -150,7 +154,6 @@ bool talka(koord_t rel)
 {
     return (rel.x <= 5 && rel.x >= -5) && (rel.y <= 5 && rel.y >= -5);
 }
-
 void ezabatu_etsaia(int indizea)
 {
     etsai_lista_len--;
