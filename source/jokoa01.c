@@ -53,8 +53,11 @@ void inGame()
 {
 	erakutsiInGame();
 	erakutsiMagoa(JOKALARI_SPRITE_INDIZEA, PANT_ERDI_X-8, PANT_ERDI_Y-8);
-	HP = 100;
+	HP = 10;
+	bizitza_barra[12]="[##########]";
+	indice_bizitza_barra = 10;
 	iprintf("\x1b[20;0HHP: %d", HP);
+	iprintf("\x1b[19;0HHP: %s", bizitza_barra);
 	EGOERA=INGAME;
 	hasiMusika();
 }
