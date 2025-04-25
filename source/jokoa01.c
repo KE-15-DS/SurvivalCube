@@ -9,7 +9,6 @@ adibide batean oinarrituta.
 #include <stdio.h>		// C-ko liburutegi estandarra sarrera eta irteerako funtzioak definitzen dituena
 #include <stdlib.h>		// C-ko liburutegi estandarra memoria erreserbak eta zenbaki bihurketak egiteko
 #include <unistd.h>		// Sistema eragileen arteko bateragarritasuna ziurtatzeko liburutegia
-
 // Guk garatutako fitxategiak
 	
 #include "definizioak.h"
@@ -100,6 +99,9 @@ void jokoa01()
 			break; 
 		case INGAME:
 			// teklatuaren inkesta (geziak)
+			
+			
+
 			break;
 		}
 		//iprintf("\x1b[4;0H me cago en su mare");
@@ -135,4 +137,7 @@ void inGameInkesta()
 			erakutsiMagoaNorantza(JOKALARI_SPRITE_INDIZEA, PANT_ERDI_X-8, PANT_ERDI_Y-8, false);
 		}
 	}
+
+
 }
+

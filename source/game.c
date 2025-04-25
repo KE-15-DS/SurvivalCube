@@ -5,6 +5,7 @@
 #include "game.h"
 #include "spriteak.h"
 #include "jokoa01.h"
+#include "periferikoak.h"
 
 
 void tick()
@@ -38,8 +39,9 @@ void tick()
             }
             else
             {
+                
+                bizitza_barra[indice_bizitza_barra] = ' ';
                 indice_bizitza_barra --;
-                bizitza_barra[indice_bizitza_barra] = '';
                 iprintf("\x1b[20;0HHP: %d        ", HP);
                 iprintf("\x1b[19;0HHP: %s        ", bizitza_barra);
             }

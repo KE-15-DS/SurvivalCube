@@ -31,6 +31,7 @@ void tekEten ()
 			info();
 			break;
 		}
+		
 	}
 	else if (EGOERA == INFO)
 	{
@@ -43,6 +44,10 @@ void tekEten ()
 
 void tenpEten()
 {
+	if (EGOERA == MENU){
+		ukimenPantailaInkesta();
+		
+	}
 	static int tik=0;
 	if (EGOERA == INGAME)
 	{
