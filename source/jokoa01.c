@@ -125,11 +125,13 @@ void inGameInkesta()
 		{
 			jokalari_pos.x++;
 			erakutsiMagoaNorantza(JOKALARI_SPRITE_INDIZEA, PANT_ERDI_X-8, PANT_ERDI_Y-8, true);
+			eskumara_begira = true;
 		}
 		if (~TEKLAK_DAT & BIT(5) && jokalari_pos.x > 0)  // ezkerra
 		{
 			jokalari_pos.x--;
 			erakutsiMagoaNorantza(JOKALARI_SPRITE_INDIZEA, PANT_ERDI_X-8, PANT_ERDI_Y-8, false);
+			eskumara_begira = false;
 		}
 	}
 }
