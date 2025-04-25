@@ -13,6 +13,17 @@ void tick()
     if (IFRAMES > 0)
         IFRAMES--;
 
+    if (eraso_cooldown > 0)
+    {
+        eraso_cooldown--;
+        
+        if (eraso_cooldown < ERASO_FRAMES)
+        {
+            erasoa_eskuman = false;
+            erasoa_ezkerrean = false;
+        }
+    }
+
     static int mugituDelay = 0;
     if (mugituDelay == 2)
         mugituDelay = 0;
@@ -30,22 +41,28 @@ void tick()
             k->y += n.y;
         }
 
-        if (IFRAMES ==  0 && talka(abs2rel(*k)))
+        if (erasoak_jota(abs2rel(*k)))
         {
-            HP--;
-            if (HP <= 0)
+            ezabatu_etsaia(i);
+        }
+        else
+        {
+            if (IFRAMES ==  0 && talka(abs2rel(*k)))
             {
-                gameOver();
+                HP--;
+                if (HP <= 0)
+                {
+                    gameOver();
+                }
+                else
+                {
+                    bizitza_barra[indice_bizitza_barra] = ' ';
+                    indice_bizitza_barra --;
+                    iprintf("\x1b[20;0HHP: %d        ", HP);
+                    iprintf("\x1b[19;0HHP: %s        ", bizitza_barra);
+                }
+                IFRAMES = 20;  // adibidez
             }
-            else
-            {
-                
-                bizitza_barra[indice_bizitza_barra] = ' ';
-                indice_bizitza_barra --;
-                iprintf("\x1b[20;0HHP: %d        ", HP);
-                iprintf("\x1b[19;0HHP: %s        ", bizitza_barra);
-            }
-            IFRAMES = 20;  // adibidez
         }
     }
     // TODO: menos random
@@ -63,19 +80,25 @@ void marraztu()
     int i;
     for (i=0; i < etsai_lista_len; i++)
     {
-        koord_t pant = abs2pant(etsai_lista[i].pos);
-        if (pantailan_dago(pant))
-        {
-            // marraztu etsaia
-            // temporal hasta que haya sprite
-            pant.x-=8;  // spritea zentratzeko
-            pant.y-=8;
-            erakutsiMagoa(i, pant.x, pant.y);
-        }
-        else
-        {
-            ezabatuMagoa(i, pant.x, pant.y);
-        }
+        marraztu_etsaia(i, &etsai_lista[i]);
+    }
+}
+
+// Marraztu edo pantailatik ezabatzen du behar den heinean
+void marraztu_etsaia(int indizea, etsaia_t *e)
+{
+    koord_t pant = abs2pant(e->pos);
+    if (pantailan_dago(pant))
+    {
+        // marraztu etsaia
+        // temporal hasta que haya sprite
+        pant.x-=8;  // spritea zentratzeko
+        pant.y-=8;
+        erakutsiMagoa(indizea, pant.x, pant.y);
+    }
+    else
+    {
+        ezabatuMagoa(indizea, pant.x, pant.y);
     }
 }
 
@@ -113,9 +136,9 @@ void spawnEnemy()
 
 etsaia_t etsaia_hasieratu()
 {
-    etsaia_t e;
-    e.hp = 2;
-    e.abiadura = 5;
+    etsaia_t e = {};
+    //e.hp = 2;
+    //e.abiadura = 5;
     return e;
 }
 
@@ -131,5 +154,27 @@ bool talka(koord_t rel)
 {
     return (rel.x <= 5 && rel.x >= -5) && (rel.y <= 5 && rel.y >= -5);
 }
+void ezabatu_etsaia(int indizea)
+{
+    etsai_lista_len--;
+    etsai_lista[indizea] = etsai_lista[etsai_lista_len];
+    marraztu_etsaia(indizea, &etsai_lista[indizea]);
+    koord_t pant = abs2pant(etsai_lista[etsai_lista_len].pos);
+    ezabatuMagoa(etsai_lista_len, pant.x-8, pant.y-8);
+}
 
-
+bool erasoak_jota(koord_t rel)
+{
+    if ((erasoa_eskuman || erasoa_ezkerrean) && rel.y >= -ERASO_LEN_Y && rel.y <= ERASO_LEN_Y)
+    {
+        if (erasoa_eskuman)
+        {
+            return rel.x > 0 && rel.x <= ERASO_LEN_X;
+        }
+        else //if (erasoa_ezkerrean)
+        {
+            return rel.x < 0 && rel.x >= -ERASO_LEN_X;
+        }
+    }
+    return false;
+}

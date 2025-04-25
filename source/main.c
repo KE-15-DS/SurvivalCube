@@ -30,6 +30,11 @@ koord_t jokalari_pos;
 int IFRAMES = 0;
 char bizitza_barra[12] = "[##########]";
 int indice_bizitza_barra = 10;
+bool erasoa_ezkerrean = false;
+bool erasoa_eskuman = false;
+int eraso_cooldown = 0;
+bool eskumara_begira = false;
+
 int main(void) 
 {
 	jokalari_pos.x = 250;  // maparen erdia
