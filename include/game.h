@@ -43,4 +43,6 @@ extern bool eskumara_begira;
 #define ERASO_LEN_Y 8
 #define ERASO_FRAMES 20
 
+//ENTRA EKAIN
+
 #endif
