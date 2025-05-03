@@ -27,7 +27,6 @@ void tekEten ()
 			inGame();
 			break;
 		case SELECT:
-			// TODO: jolasteko gida pantailaratu
 			info();
 			break;
 		}
@@ -60,13 +59,24 @@ void tekEten ()
 			}
 		}
 	}
+	else if (EGOERA == GAMEOVER)
+	{
+		if (SakatutakoTekla() == START)
+		{
+			inGame();
+		}
+		if (SakatutakoTekla() == SELECT)
+		{
+			menu();
+		}
+	}
 }
 
 void tenpEten()
 {
 	if (EGOERA == MENU){
+		//TODO: beitu honek nola iteun
 		ukimenPantailaInkesta();
-		
 	}
 	static int tik=0;
 	if (EGOERA == INGAME)
