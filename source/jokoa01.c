@@ -22,7 +22,7 @@ adibide batean oinarrituta.
 
 int denb; // denbora neurtzen joateko; baloratu ea beharrezkoa den
 
-void menu() // !!!!!!! erakutsiMenua deitze zan, baina erakutsiLoremIpsum() izenak fondotarako erreserba ditzagun.
+void menu()
 {
 	// TODO: benetako menu bat in
 	erakutsiMenua(); // fondoa erakutsi
@@ -31,7 +31,7 @@ void menu() // !!!!!!! erakutsiMenua deitze zan, baina erakutsiLoremIpsum() izen
 	geldituMusika();
 }
 
-void info() // !!!!!!! erakutsiInfo deitze zan, baina erakutsiLoremIpsum() izenak fondotarako erreserba ditzagun.
+void info()
 {
 	// TODO: honentzat fondo guapardo bat in
 	erakutsiInfo();
@@ -59,10 +59,10 @@ void inGame()
 	erakutsiInGame();
 	erakutsiMagoa(JOKALARI_SPRITE_INDIZEA, PANT_ERDI_X-8, PANT_ERDI_Y-8);
 	HP = 10;
-	bizitza_barra[12]="[##########]";
-	indice_bizitza_barra = 10;
 	iprintf("\x1b[20;0HHP: %d", HP);
+	bizitza_barra[12]="[##########]";
 	iprintf("\x1b[19;0HHP: %s", bizitza_barra);
+	indice_bizitza_barra = 10;
 	EGOERA=INGAME;
 	hasiMusika();
 }
@@ -122,7 +122,6 @@ void inGameInkesta()
 	{
 		//iprintf("\x1b[3;0HTEKLAK_DAT: %d", TEKLAK_DAT);
 		// mapari 0-500eko limiteak jarri dizkiot
-		// FIXME: etsaiak ere barruan geratzea falta da.
 		// TODO: sortu "barrera bisual" bat maparen inguruan, jokalariak mugak ikusteko
 		if (~TEKLAK_DAT & BIT(6) && jokalari_pos.y > 0)  // gora
 		{

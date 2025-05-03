@@ -59,6 +59,17 @@ void tekEten ()
 			}
 		}
 	}
+	else if (EGOERA == GAMEOVER)
+	{
+		if (SakatutakoTekla() == START)
+		{
+			inGame();
+		}
+		if (SakatutakoTekla() == SELECT)
+		{
+			menu();
+		}
+	}
 }
 
 void tenpEten()
