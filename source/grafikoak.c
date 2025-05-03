@@ -135,5 +135,6 @@ void HasieratuGrafikoakSpriteak()
 	SpriteakMemorianGorde();
 }
 
+
 /***********************2024-2025*******************************/
 
