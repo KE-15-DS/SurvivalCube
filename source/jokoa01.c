@@ -42,10 +42,16 @@ void info() // !!!!!!! erakutsiInfo deitze zan, baina erakutsiLoremIpsum() izena
 
 void gameOver()
 {
-	// TODO: game over en general programau
+	// TODO: retry/play again botoia programau
 	iprintf("\x1b[22;5HGame Over");
+	erakutsiGameOver();
 	EGOERA=GAMEOVER;
 	geldituMusika();
+	ezabatuMagoa(JOKALARI_SPRITE_INDIZEA, PANT_ERDI_X-8, PANT_ERDI_Y-8);
+	while (etsai_lista_len > 0)
+	{
+		ezabatu_etsaia(etsai_lista_len - 1);
+	}
 }
 
 void inGame()

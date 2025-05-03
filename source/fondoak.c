@@ -18,6 +18,7 @@ automatikoki sortzen dira, konpilatzerako garaian, baina horretarako gogoratu be
 #include "Menua.h"
 #include "Info.h"
 #include "Ingame.h"
+#include "Gameover.h"
 
 /* Irudiak memorian kopiatzeko DMA kanala aukeratu (3.a) */
 static const int DMA_CHANNEL = 3;
@@ -46,6 +47,14 @@ void erakutsiInGame() {
                      IngameBitmap, // Automatikoki sortzen den aldagaia
                      (uint16 *)BG_BMP_RAM(0), // Fondo nagusiaren helbidea
                      IngameBitmapLen); // Luzera (bytetan); automatikoki sortzen den aldagaia
+}
+
+void erakutsiGameOver() {
+
+	dmaCopyHalfWords(DMA_CHANNEL,
+                     GameoverBitmap, // Automatikoki sortzen den aldagaia
+                     (uint16 *)BG_BMP_RAM(0), // Fondo nagusiaren helbidea
+                     GameoverBitmapLen); // Luzera (bytetan); automatikoki sortzen den aldagaia
 }
 /***********************2024-2025*******************************/
 
