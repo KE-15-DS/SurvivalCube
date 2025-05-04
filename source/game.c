@@ -43,6 +43,7 @@ void tick()
 
         if (erasoak_jota(abs2rel(*k)))
         {
+            PUNTUAK += etsai_lista[i].puntuak;
             ezabatu_etsaia(i);
         }
         else
@@ -64,6 +65,9 @@ void tick()
             }
         }
     }
+
+    iprintf("\x1b[17;0HPuntuazioa: %d                 ", PUNTUAK);
+
     // TODO: menos random
     if (random_int(0,24) == 0)
     {
@@ -133,11 +137,11 @@ void spawnEnemy()
     }
 }
 
+// Etsaiaren atributu guztiak posizioa izan ezik erabakitzen ditu.
 etsaia_t etsaia_hasieratu()
 {
     etsaia_t e = {};
-    //e.hp = 2;
-    //e.abiadura = 5;
+    e.puntuak = 10;
     return e;
 }
 

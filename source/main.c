@@ -34,6 +34,7 @@ bool erasoa_ezkerrean = false;
 bool erasoa_eskuman = false;
 int eraso_cooldown = 0;
 bool eskumara_begira = false;
+unsigned int PUNTUAK = 0;
 
 int main(void) 
 {

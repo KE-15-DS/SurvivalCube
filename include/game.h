@@ -13,6 +13,7 @@ typedef struct {
     //uint8_t hp;
     // zenbat frame mugitu baino lehen
     //uint8_t abiadura;
+    int puntuak; // hiltzean emango dituen puntu kopurua
 } etsaia_t;
 
 etsaia_t etsaia_hasieratu();
@@ -37,6 +38,7 @@ extern bool erasoa_ezkerrean;
 extern bool erasoa_eskuman;
 extern int eraso_cooldown;  // 0rantz doa, ERASO_FRAMES eta 2*ERASO_FRAMES artean dagoenean dago aktibo erasoa, bestela oraindik ezin da berriz erabili
 extern bool eskumara_begira;
+extern unsigned int PUNTUAK;
 
 // Konstanteak
 #define ERASO_LEN_X 64
