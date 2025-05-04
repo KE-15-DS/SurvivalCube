@@ -50,17 +50,16 @@ void tick()
             if (IFRAMES ==  0 && talka(abs2rel(*k)))
             {
                 HP--;
+                bizitza_barra[indice_bizitza_barra] = ' ';
+                indice_bizitza_barra --;
+                iprintf("\x1b[20;0HHP: %d        ", HP);
+                iprintf("\x1b[19;0HHP: %s        ", bizitza_barra);
+
                 if (HP <= 0)
                 {
                     gameOver();
                 }
-                else
-                {
-                    bizitza_barra[indice_bizitza_barra] = ' ';
-                    indice_bizitza_barra --;
-                    iprintf("\x1b[20;0HHP: %d        ", HP);
-                    iprintf("\x1b[19;0HHP: %s        ", bizitza_barra);
-                }
+
                 IFRAMES = 20;  // adibidez
             }
         }

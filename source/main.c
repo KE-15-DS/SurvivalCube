@@ -38,7 +38,7 @@ bool eskumara_begira = false;
 int main(void) 
 {
 	jokalari_pos.x = 250;  // maparen erdia
-	jokalari_pos.y = 250;  // TODO maparen limiteak
+	jokalari_pos.y = 250;
 	srand(time(NULL));
 	HasieratuGrafikoakSpriteak();
 	hasieratuMusika();
