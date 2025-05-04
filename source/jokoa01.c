@@ -60,7 +60,7 @@ void inGame()
 	erakutsiMagoa(JOKALARI_SPRITE_INDIZEA, PANT_ERDI_X-8, PANT_ERDI_Y-8);
 	HP = 10;
 	iprintf("\x1b[20;0HHP: %d", HP);
-	bizitza_barra[12]="[##########]";
+	strcpy(bizitza_barra,"[##########]");
 	iprintf("\x1b[19;0HHP: %s", bizitza_barra);
 	indice_bizitza_barra = 10;
 	EGOERA=INGAME;
