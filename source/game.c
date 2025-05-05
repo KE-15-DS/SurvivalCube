@@ -7,6 +7,7 @@
 #include "jokoa01.h"
 #include "periferikoak.h"
 #include "musika.h"
+#include "definizioak.h"
 
 
 void tick()

@@ -26,7 +26,7 @@ int LVL = 0;
 int HP = 100;
 etsaia_t etsai_lista[100];  // uste dut horrela hasieratzen dela
 int etsai_lista_len = 0;
-koord_t jokalari_pos;
+koord_t jokalari_pos = {250,250};  // maparen erdia
 int IFRAMES = 0;
 char bizitza_barra[13] = "[##########]";
 int indice_bizitza_barra = 10;
@@ -39,8 +39,6 @@ bool BOSSA_DAGO = false;
 
 int main(void) 
 {
-	jokalari_pos.x = 250;  // maparen erdia
-	jokalari_pos.y = 250;
 	srand(time(NULL));
 	HasieratuGrafikoakSpriteak();
 	hasieratuMusika();

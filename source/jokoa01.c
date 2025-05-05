@@ -60,6 +60,7 @@ void inGame()
 	erakutsiInGame();
 	erakutsiMagoa(JOKALARI_SPRITE_INDIZEA, PANT_ERDI_X-8, PANT_ERDI_Y-8);
 	HP = 10;
+	consoleDemoInit();
 	iprintf("\x1b[20;0HHP: %d", HP);
 	strcpy(bizitza_barra,"[##########]");
 	iprintf("\x1b[19;0HHP: %s", bizitza_barra);
@@ -68,6 +69,7 @@ void inGame()
 	PUNTUAK = 0;
 	EGOERA=INGAME;
 	hasiMusika(MOD_INGAME);
+	//consoleInit(NULL, 0, BgType_Text4bpp, BgSize_T_256x256, 31, 0, false, true);
 }
 
 void jokoa01()

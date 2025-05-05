@@ -16,7 +16,7 @@ adibide batean oinarrituta.
 
 // libnds bertsio berriekin konpatibilitatea
 // vramSetMainBanks funtzioa ez dela existitzen esaten badizu, deskomentatu hurrengo lerroa
-//#define vramSetMainBanks vramSetPrimaryBanks
+#define vramSetMainBanks vramSetPrimaryBanks
 
 void hasieratuBideoa() {
     /*  Bi pantailatan irudiak erakutsi ahal izateko memoria mapeatu */
@@ -37,6 +37,7 @@ void hasieratuBideoa() {
     /*  2. mailako pantaila bideo modua ezarri */
     videoSetModeSub(MODE_5_2D | // 5. bideo modua ezarri
                     DISPLAY_BG3_ACTIVE); // 3. fondoa aktibatu
+
 }
 
 
