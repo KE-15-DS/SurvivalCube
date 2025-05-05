@@ -6,5 +6,7 @@
 void hasieratuMusika();
 void hasiMusika(int abestia);
 void geldituMusika();
+void hurtSfx();
+void hitSfx();
 
 #endif

@@ -6,6 +6,7 @@
 #include "spriteak.h"
 #include "jokoa01.h"
 #include "periferikoak.h"
+#include "musika.h"
 
 
 void tick()
@@ -54,6 +55,7 @@ void tick()
 
         if (/*!e->isBoss &&*/ erasoak_jota(abs2rel(e->pos)) && e->iframes == 0)
         {
+            hitSfx();
             e->hp--;
             if (e->hp == 0)
             {
@@ -68,15 +70,20 @@ void tick()
         else if (IFRAMES ==  0 && talka(abs2rel(e->pos)))
         {
             HP--;
-            bizitza_barra[indice_bizitza_barra] = ' ';
-            indice_bizitza_barra --;
-            iprintf("\x1b[20;0HHP: %d        ", HP);
-            iprintf("\x1b[19;0HHP: %s        ", bizitza_barra);
 
             if (HP <= 0)
             {
                 gameOver();
             }
+            else
+            {
+                hurtSfx();
+            }
+
+            bizitza_barra[indice_bizitza_barra] = ' ';
+            indice_bizitza_barra --;
+            iprintf("\x1b[20;0HHP: %d        ", HP);
+            iprintf("\x1b[19;0HHP: %s        ", bizitza_barra);
 
             IFRAMES = 20;  // adibidez
         }

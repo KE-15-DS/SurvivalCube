@@ -10,6 +10,7 @@ void hasieratuMusika()
     mmInitDefaultMem((mm_addr)soundbank_bin);
     mmLoad(MOD_INGAME);
     mmLoad(MOD_GAMEOVER);
+    mmLoadEffect(SFX_HURT);
 }
 
 void hasiMusika(int abestia)
@@ -20,4 +21,30 @@ void hasiMusika(int abestia)
 void geldituMusika()
 {
     mmStop();
+}
+
+void hurtSfx()
+{
+    static const mm_sound_effect hurt_sfx = {
+        { SFX_HURT } ,			// id
+        (int)(1.0f * (1<<10)),	// rate
+        0,		// handle
+        255,	// volume
+        127,		// panning
+    };
+    
+    mmEffectEx(&hurt_sfx);
+}
+
+void hitSfx()
+{
+    static const mm_sound_effect hit_sfx = {
+        { SFX_HIT } ,			// id
+        (int)(1.0f * (1<<10)),	// rate
+        0,		// handle
+        255,	// volume
+        127,		// panning
+    };
+    
+    mmEffectEx(&hit_sfx);
 }
