@@ -8,12 +8,13 @@
 void hasieratuMusika() 
 {
     mmInitDefaultMem((mm_addr)soundbank_bin);
-    mmLoad(MOD_PD_CVK);
+    mmLoad(MOD_INGAME);
+    mmLoad(MOD_GAMEOVER);
 }
 
-void hasiMusika()
+void hasiMusika(int abestia)
 {
-    mmStart(MOD_PD_CVK, MM_PLAY_LOOP);
+    mmStart(abestia, MM_PLAY_LOOP);
 }
 
 void geldituMusika()

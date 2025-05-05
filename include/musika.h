@@ -1,8 +1,10 @@
 #ifndef MUSIKA_H
 #define MUSIKA_H
 
+#include "soundbank.h"  // abestien kodeak kargatzeko fitxategi honen #include egitean
+
 void hasieratuMusika();
-void hasiMusika();
+void hasiMusika(int abestia);
 void geldituMusika();
 
 #endif

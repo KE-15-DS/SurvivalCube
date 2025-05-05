@@ -52,6 +52,7 @@ void gameOver()
 	{
 		ezabatu_etsaia(etsai_lista_len - 1);
 	}
+	hasiMusika(MOD_GAMEOVER);
 }
 
 void inGame()
@@ -66,7 +67,7 @@ void inGame()
 	BOSSA_DAGO = false;
 	PUNTUAK = 0;
 	EGOERA=INGAME;
-	hasiMusika();
+	hasiMusika(MOD_INGAME);
 }
 
 void jokoa01()
