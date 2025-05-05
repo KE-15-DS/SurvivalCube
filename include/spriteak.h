@@ -25,20 +25,15 @@ extern void SpriteakMemorianGorde();
 
 
 extern void erakutsiMagoa(int indizea, int x, int y);
+extern void erakutsiZombi(int indizea, int x, int y);
 /* Funtzio honek erronbo bat irudikatzen du pantailako x, y posizioan. Pantailan ateratzea nahi den erronbo 
    bakoitzari indize desberdin bat esleitu behar zaio, 0 eta 126 balioen arteko indizea izan daiteke. */
 
+extern void erakutsiZombiNorantza(int indizea, int x, int y, bool eskumarantz);
 extern void erakutsiMagoaNorantza(int indizea, int x, int y, bool eskumarantz);
 
 extern void ezabatuMagoa(int indizea, int x, int y);
-/* Funtzio honek erronbo baten indizea pasata pantailatik ezabatzen du */
-
-extern void ErakutsiErronboHandia(int indizea, int x, int y);
-/* Funtzio honek erronbo handi bat irudikatzen du pantailako x, y posizioan. Pantailan ateratzea nahi den erronbo 
-   bakoitzari indize desberdin bat esleitu behar zaio, 0 eta 126 balioen arteko indizea izan daiteke. */
-
-extern void EzabatuErronboHandia(int indizea, int x, int y);
-/* Funtzio honek erronbo handi baten indizea pasata pantailatik ezabatzen du */
+extern void ezabatuZombi(int indizea, int x, int y);
 
 #define PANT_ERDI_X 128
 #define PANT_ERDI_Y 96
