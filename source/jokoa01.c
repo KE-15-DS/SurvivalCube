@@ -52,6 +52,7 @@ void gameOver()
 	{
 		ezabatu_etsaia(etsai_lista_len - 1);
 	}
+	hasiMusika(MOD_GAMEOVER);
 }
 
 void inGame()
@@ -63,8 +64,10 @@ void inGame()
 	strcpy(bizitza_barra,"[##########]");
 	iprintf("\x1b[19;0HHP: %s", bizitza_barra);
 	indice_bizitza_barra = 10;
+	BOSSA_DAGO = false;
+	PUNTUAK = 0;
 	EGOERA=INGAME;
-	hasiMusika();
+	hasiMusika(MOD_INGAME);
 }
 
 void jokoa01()
@@ -94,7 +97,8 @@ void jokoa01()
 	menu();
 	
 	while (1)  // libnds 2.0: while(1) --> while(pmMainLoop())
-	{
+	{ 
+		/*
 		switch (EGOERA)
 		{
 		case MENU:
@@ -111,6 +115,11 @@ void jokoa01()
 			break;
 		}
 		//iprintf("\x1b[4;0H me cago en su mare");
+		*/
+		// Hemen hau jarri beharko genukeen:
+		// swiWaitForVBlank();
+		// CPUa %100era ez erabiltzeko, baina erasoak apurtzen ditu
+		// Agian hemen egingo bagenitu tick(), marraztu() etab. funtzionatuko luke
 	}
 	// Bukaeran etenak galarazi.
 	IME = 0;

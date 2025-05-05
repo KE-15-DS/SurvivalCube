@@ -44,4 +44,8 @@ extern void EzabatuErronboHandia(int indizea, int x, int y);
 #define PANT_ERDI_Y 96
 #define JOKALARI_SPRITE_INDIZEA 101
 
+extern u16* gfxmago;
+void erakutsiSpritea(u16* gfx, int indizea, int x, int y, bool eskumarantz);
+void ezabatuSpritea(u16* gfx, int indizea);
+
 #endif
