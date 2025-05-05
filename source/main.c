@@ -35,6 +35,7 @@ bool erasoa_eskuman = false;
 int eraso_cooldown = 0;
 bool eskumara_begira = false;
 unsigned int PUNTUAK = 0;
+bool BOSSA_DAGO = false;
 
 int main(void) 
 {

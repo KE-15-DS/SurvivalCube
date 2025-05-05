@@ -41,7 +41,7 @@ void tick()
             k->y += n.y;
         }
 
-        if (erasoak_jota(abs2rel(*k)))
+        if (!etsai_list[i].isBoss && erasoak_jota(abs2rel(*k)))
         {
             PUNTUAK += etsai_lista[i].puntuak;
             ezabatu_etsaia(i);
@@ -69,9 +69,22 @@ void tick()
     iprintf("\x1b[17;0HPuntuazioa: %d                 ", PUNTUAK);
 
     // TODO: menos random
-    if (random_int(0,24) == 0)
+    if (!BOSSA_DAGO)
     {
-        spawnEnemy();
+        if (random_int(0,100 - PUNTUAK/30) == 0)
+        {
+            spawnEnemy();
+        }
+
+        if (PUNTUAK > 200)
+        {
+            if (random_int(0,20)==0)
+            {
+                spawnEnemy();
+                etsai_lista[etsai_lista_len-1].isBoss = true;
+                BOSSA_DAGO = true;
+            }
+        }
     }
 
     mugituDelay++;
@@ -117,7 +130,6 @@ void spawnEnemy()
     {
         int x, y;
         koord_t k, abs_pos;
-        etsaia_t e = etsaia_hasieratu();
 
         do {
             x = random_int(min_dist, max_dist);
@@ -131,17 +143,16 @@ void spawnEnemy()
             abs_pos  = rel2abs(k);
         } while (abs_pos.x < min_bound || abs_pos.y < min_bound || abs_pos.x > max_bound || abs_pos.y > max_bound); // TODO: TESTEATU ONDO (nei ondo itezila esango nuke)
 
-        e.pos = rel2abs(k);
+        etsaia_t e = etsaia_hasieratu(abs_pos);
         etsai_lista[etsai_lista_len] = e;  // kopia
         etsai_lista_len++;
     }
 }
 
 // Etsaiaren atributu guztiak posizioa izan ezik erabakitzen ditu.
-etsaia_t etsaia_hasieratu()
+etsaia_t etsaia_hasieratu(koord_t abs)
 {
-    etsaia_t e = {};
-    e.puntuak = 10;
+    etsaia_t e = {abs, 10, false, false};
     return e;
 }
 
