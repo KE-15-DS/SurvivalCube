@@ -5,7 +5,7 @@
 #include <stdint.h>
 
 #include "mate.h"
-extern char bizitza_barra[12];
+extern char bizitza_barra[13];
 extern int indice_bizitza_barra;
 typedef struct {
     // ABSOLUTUAK
