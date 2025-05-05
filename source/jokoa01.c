@@ -63,6 +63,8 @@ void inGame()
 	strcpy(bizitza_barra,"[##########]");
 	iprintf("\x1b[19;0HHP: %s", bizitza_barra);
 	indice_bizitza_barra = 10;
+	BOSSA_DAGO = false;
+	PUNTUAK = 0;
 	EGOERA=INGAME;
 	hasiMusika();
 }
