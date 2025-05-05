@@ -41,28 +41,25 @@ void tick()
             k->y += n.y;
         }
 
-        if (!etsai_list[i].isBoss && erasoak_jota(abs2rel(*k)))
+        if (!etsai_lista[i].isBoss && erasoak_jota(abs2rel(*k)))
         {
             PUNTUAK += etsai_lista[i].puntuak;
             ezabatu_etsaia(i);
         }
-        else
+        else if (IFRAMES ==  0 && talka(abs2rel(*k)))
         {
-            if (IFRAMES ==  0 && talka(abs2rel(*k)))
+            HP--;
+            bizitza_barra[indice_bizitza_barra] = ' ';
+            indice_bizitza_barra --;
+            iprintf("\x1b[20;0HHP: %d        ", HP);
+            iprintf("\x1b[19;0HHP: %s        ", bizitza_barra);
+
+            if (HP <= 0)
             {
-                HP--;
-                bizitza_barra[indice_bizitza_barra] = ' ';
-                indice_bizitza_barra --;
-                iprintf("\x1b[20;0HHP: %d        ", HP);
-                iprintf("\x1b[19;0HHP: %s        ", bizitza_barra);
-
-                if (HP <= 0)
-                {
-                    gameOver();
-                }
-
-                IFRAMES = 20;  // adibidez
+                gameOver();
             }
+
+            IFRAMES = 20;  // adibidez
         }
     }
 
