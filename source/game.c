@@ -141,7 +141,7 @@ void marraztu_etsaia(int indizea, etsaia_t *e)
     else
     {
         //ezabatuMagoa(indizea, pant.x, pant.y);
-        ezabatuSpritea(e->gfx, indizea);
+        ezabatuSpritea(indizea);
     }
 }
 
@@ -198,19 +198,19 @@ etsaia_t etsaia_hasieratu(koord_t abs, etsai_mota_t mota)
         e.abiadura = 1;
         e.puntuak = -1;  // autocasting -> max int jejejejeje
         e.hp = -1;  // 255 aldiz jotzea lortzen baduzu bakarrik geldituko zara, zuk zeuk sortutako mundu desolatuan harrapatuta
-        e.gfx = gfxmago;  // momentuz
+        e.gfx = gfxzombi;  // momentuz
         break;
     case SENDOA:
         e.abiadura = 2;
         e.puntuak = 30;
         e.hp = 2;
-        e.gfx = gfxmago;  // momentuz
+        e.gfx = gfxzombi;  // momentuz
         break;
     case AZKARRA:
         e.abiadura = 0;
         e.puntuak = 50;
         e.hp = 1;
-        e.gfx = gfxmago;  // momentuz
+        e.gfx = gfxzombi;  // momentuz
         break;
     }
     
@@ -236,7 +236,7 @@ void ezabatu_etsaia(int indizea)
     etsai_lista[indizea] = etsai_lista[etsai_lista_len];
     marraztu_etsaia(indizea, &etsai_lista[indizea]);
     koord_t pant = abs2pant(etsai_lista[etsai_lista_len].pos);
-    ezabatuMagoa(etsai_lista_len, pant.x-8, pant.y-8);
+    ezabatuSpritea(etsai_lista_len);
 }
 
 bool erasoak_jota(koord_t rel)
