@@ -112,23 +112,24 @@ void ErlojuaGelditu()
 }
 
 void ukimenPantailaInkesta(){
-	touchPosition ukimena;
+	touchRead(&PANT_DAT);
 
-	// botoien eta antalla taktilaren egoera irakurri
-
-	scanKeys();
-	touchRead(&ukimena);
-
-	iprintf("\x1b[22;0H]");
-	if (keysHeld() & KEY_TOUCH){
-		iprintf("stylus ikutzen X: %3d Y: %3d", ukimena.px, ukimena.py);
-
-	} else {
-		iprintf("ez dago ukimenik");
+	if (PANT_DAT.px != 0 && PANT_DAT.py != 0){
+		iprintf("\x1b[22;0Hstylus ikutzen X: %3d Y: %3d", PANT_DAT.px, PANT_DAT.py);
 	}
-
+			
+			
+	if (PANT_DAT.px < 116 && PANT_DAT.px > 51 && 
+		PANT_DAT.py < 120 && PANT_DAT.py > 101 ){
+		inGame();
+	}
+			
+	if (PANT_DAT.px < 216 && PANT_DAT.px > 139 && 
+		PANT_DAT.py < 120 && PANT_DAT.py > 101 ){
+		menu();
+	}
+		
 }
-
 
 /***********************2024-2025*******************************/
 
