@@ -23,18 +23,22 @@ extern void BigarrenPaletaEzarri();
 extern void SpriteakMemorianGorde();
 /* Irudikatutako Spriteak memorian kargatzen ditu.*/
 
-
+/*
 extern void erakutsiMagoa(int indizea, int x, int y);
 extern void erakutsiZombi(int indizea, int x, int y);
+*/
 /* Funtzio honek erronbo bat irudikatzen du pantailako x, y posizioan. Pantailan ateratzea nahi den erronbo 
    bakoitzari indize desberdin bat esleitu behar zaio, 0 eta 126 balioen arteko indizea izan daiteke. */
-
+/*
 extern void erakutsiZombiNorantza(int indizea, int x, int y, bool eskumarantz);
 extern void erakutsiMagoaNorantza(int indizea, int x, int y, bool eskumarantz);
 
 extern void ezabatuMagoa(int indizea, int x, int y);
 extern void ezabatuZombi(int indizea, int x, int y);
-
+*/
+extern void erakutsi(int indizea, int x, int y, char *sprite);
+extern void ezabatu(int indizea, int x, int y, char *sprite);
+extern void erakutsiNorantza(int indizea, int x, int y, char *sprite, bool eskumarantz);
 #define PANT_ERDI_X 128
 #define PANT_ERDI_Y 96
 #define JOKALARI_SPRITE_INDIZEA 101

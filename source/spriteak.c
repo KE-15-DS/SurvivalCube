@@ -14,7 +14,8 @@ adibide batean oinarrituta.
 #include "definizioak.h"
 
 u16* gfxmago;
-u16* gfxerronboHandia;
+u16* gfxzombi;
+
 
 
 /* Pantailan erakutsi nahi den sprite bakoitzeko memoria erreserbatu.*/
@@ -22,7 +23,7 @@ void memoriaErreserbatu()
 {
 	/* Pantaila nagusian gehitu nahi den sprite bakoitzarentzako horrelako bat egin behar da. */
 	gfxmago= oamAllocateGfx(&oamMain, SpriteSize_16x16, SpriteColorFormat_256Color);
-	gfxerronboHandia=oamAllocateGfx(&oamMain, SpriteSize_32x32, SpriteColorFormat_256Color);
+	gfxzombi= oamAllocateGfx(&oamMain, SpriteSize_32x32, SpriteColorFormat_256Color);
 }
 
 /* Pixel bakoitzak har ditzakeen 256 balioetako bakoitzari kolore bat esleitu PANTAILA NAGUSIAN. 0 balioa gardena da 
@@ -183,13 +184,13 @@ int i;
 		gfxzombi[i] = zombi[i*2] | (zombi[(i*2)+1]<<8);				
 	}
 }
-
+ // 														NO LO BORRO PORSIACA, SI FUNCIONA SE PUEDE BORRAR(ME REFIERO A LO QUE ESTA DEBAJO DE ESTO COMENTADO)
 /* Funtzio honek erronbo bat irudikatzen du pantailako x,y posizioan. Pantailan ateratzea nahi den erronbo 
    bakoitzari indize desberdin bat esleitu behar zaio, 0 eta 126 balioen arteko indizea izan daiteke */
-
+/*
 void erakutsiMagoa(int indizea, int x, int y)
 { 
- 
+
 oamSet(&oamMain, // main graphics engine context
 		indizea,           // oam index (0 to 127)  
 		x, y,   // x and y pixel location of the sprite
@@ -227,8 +228,9 @@ void erakutsiMagoaNorantza(int indizea, int x, int y, bool eskumarantz)
 	  
 oamUpdate(&oamMain);  
 }
-
+*/
 /* Funtzio honek erronbo baten indizea pasata pantailatik ezabatzen du */
+/*
 void ezabatuMagoa(int indizea, int x, int y)
 {
 
@@ -260,7 +262,7 @@ oamSet(&oamMain, // main graphics engine context
 		0,					  // this is the palette index if multiple palettes or the alpha value if bmp sprite	
 		SpriteSize_16x16,     
 		SpriteColorFormat_256Color, 
-		gfxmago,//+16*16/2,                  // pointer to the loaded graphics
+		gfxzombie,//+16*16/2,                  // pointer to the loaded graphics
 		-1,                  // sprite rotation data  
 		false,               // double the size when rotating?
 		false,			// hide the sprite?
@@ -280,7 +282,7 @@ void ezabatuZombi(int indizea, int x, int y)
 		0,					  // this is the palette index if multiple palettes or the alpha value if bmp sprite	
 		SpriteSize_16x16,     
 		SpriteColorFormat_256Color, 
-		gfxmago,//+16*16/2,                  // pointer to the loaded graphics
+		gfxzombi,//+16*16/2,                  // pointer to the loaded graphics
 		-1,                  // sprite rotation data  
 		false,               // double the size when rotating?
 		true,			// hide the sprite?
@@ -289,7 +291,62 @@ void ezabatuZombi(int indizea, int x, int y)
 		); 
 	  
 	oamUpdate(&oamMain);  
+}*/
+
+void erakutsi(int indizea, int x, int y, char *sprite)
+{
+	oamSet(&oamMain,
+		indizea,
+		x, y,
+		0,
+		0,
+		SpriteSize_16x16,     
+		SpriteColorFormat_256Color,
+		sprite,
+		-1,
+		false,		// tamaña duplikau rotatzean
+		false,			// ezkutatu sprite-a
+		false, false, // vflip, hflip
+		false      // mosaicoa aplikau
+	);
 }
 
+void ezabatu(int indizea, int x, int y, char *sprite)
+{
+	oamSet(&oamMain,
+		indizea,
+		x, y,
+		0,
+		0,
+		SpriteSize_16x16,     
+		SpriteColorFormat_256Color,
+		sprite,
+		-1,
+		false,		// tamaña duplikau rotatzean
+		true,			// ezkutatu sprite-a
+		false, false, // vflip, hflip
+		false      // mosaicoa aplikau
+	);
+}
+
+void erakutsiNorantza(int indizea, int x, int y, char *sprite, bool eskumarantz)
+{
+	oamSet(&oamMain, // main graphics engine context
+		indizea,           // oam index (0 to 127)  
+		x, y,   // x and y pixel location of the sprite
+		0,                    // priority, lower renders last (on top)
+		0,					  // this is the palette index if multiple palettes or the alpha value if bmp sprite	
+		SpriteSize_16x16,     
+		SpriteColorFormat_256Color, 
+		sprite,//+16*16/2,                  // pointer to the loaded graphics
+		-1,                  // sprite rotation data  
+		false,               // double the size when rotating?
+		false,			// hide the sprite?
+		eskumarantz, false, // vflip, hflip
+		false	// apply mosaic
+		); 
+	  
+oamUpdate(&oamMain);  
+}
 /***********************2024-2025*******************************/
 
