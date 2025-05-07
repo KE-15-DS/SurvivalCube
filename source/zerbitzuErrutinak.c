@@ -120,10 +120,26 @@ void tenpEten()
 	}*/
 }
 
+void VBlankEten()
+{
+	if (EGOERA==INGAME)
+	{
+		int virtual_scroll_x = jokalari_pos.x - (SCREEN_WIDTH/2);
+		int virtual_scroll_y = jokalari_pos.y - (SCREEN_HEIGHT/2);
+		int actual_scroll_x = virtual_scroll_x / 2; // Scale down due to 0.5x scaling
+		int actual_scroll_y = virtual_scroll_y / 2;
+		// Use full 32-bit calculations
+		REG_BG2X = (actual_scroll_x << 8);  // Equivalent to *128 (0.5x scaled 256px background)
+		REG_BG2Y = (actual_scroll_y << 8);
+	}
+	oamUpdate(&oamMain);
+}
+
 void etenZerbErrutEzarri()
 {
 	irqSet(IRQ_KEYS, tekEten);
 	irqSet(IRQ_TIMER0, tenpEten);
+	irqSet(IRQ_VBLANK, VBlankEten);
 }
 
 /***********************2024-2025*******************************/

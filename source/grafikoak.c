@@ -37,6 +37,7 @@ void hasieratuBideoa() {
     /*  2. mailako pantaila bideo modua ezarri */
     videoSetModeSub(MODE_5_2D | // 5. bideo modua ezarri
                     DISPLAY_BG3_ACTIVE); // 3. fondoa aktibatu
+
 }
 
 

@@ -14,15 +14,13 @@ adibide batean oinarrituta.
 #include "definizioak.h"
 
 u16* gfxmago;
-u16* gfxerronboHandia;
-
 
 /* Pantailan erakutsi nahi den sprite bakoitzeko memoria erreserbatu.*/
 void memoriaErreserbatu()
 {
+	//oamClear(&oamMain, 0, 0);
 	/* Pantaila nagusian gehitu nahi den sprite bakoitzarentzako horrelako bat egin behar da. */
 	gfxmago= oamAllocateGfx(&oamMain, SpriteSize_16x16, SpriteColorFormat_256Color);
-	gfxerronboHandia=oamAllocateGfx(&oamMain, SpriteSize_32x32, SpriteColorFormat_256Color);
 }
 
 /* Pixel bakoitzak har ditzakeen 256 balioetako bakoitzari kolore bat esleitu PANTAILA NAGUSIAN. 0 balioa gardena da 
@@ -81,41 +79,6 @@ u8 mago[256] =
 
 };
 
-u8 erronboHandia[1024] = 
-{
-	0,0,0,0,0,0,2,2,0,0,0,0,0,2,2,2,0,0,0,0,2,2,2,2,0,0,0,2,2,2,2,2,0,0,2,2,2,2,2,2,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,	
-
-	3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,	
-
-	3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,	
- 
-	2,2,0,0,0,0,0,0,2,2,2,0,0,0,0,0,2,2,2,2,0,0,0,0,2,2,2,2,2,0,0,0,2,2,2,2,2,2,0,0,2,2,2,2,2,2,2,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,	
-
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-
-	0,0,0,0,0,0,1,1,0,0,0,0,0,1,1,1,0,0,0,0,1,1,1,1,0,0,0,1,1,1,1,1,0,0,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,	
-
-	1,1,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,1,1,1,0,0,0,0,1,1,1,1,1,0,0,0,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,	
-
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-
-	1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
-
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,2,2,2,2,2,2,2,0,0,2,2,2,2,2,2,0,0,0,2,2,2,2,2,0,0,0,0,2,2,2,2,0,0,0,0,0,2,2,2,0,0,0,0,0,0,2,2,	
-
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,2,2,2,2,2,2,0,0,2,2,2,2,2,0,0,0,2,2,2,2,0,0,0,0,2,2,2,0,0,0,0,0,2,2,0,0,0,0,0,0,	
-
-	1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
-
-	1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,0,0,0,1,1,1,1,1,0,0,0,0,1,1,1,1,0,0,0,0,0,1,1,1,0,0,0,0,0,0,1,1,	
-
-	3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,	
-
-	3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,	
-
-	1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,0,0,1,1,1,1,1,0,0,0,1,1,1,1,0,0,0,0,1,1,1,0,0,0,0,0,1,1,0,0,0,0,0,0,	
-};
-
 /* Irudikatutako Spriteak memorian kargatzen ditu. SPRITE bat baino gehiago erakusteko
 for bana egin behar da.*/
 
@@ -127,11 +90,45 @@ int i;
 	{	
 		gfxmago[i] = mago[i*2] | (mago[(i*2)+1]<<8);				
 	}
-	//32*32ko spriteentzako
-	for(i = 0; i < 32 * 32 / 2; i++) 
-	{	
-		gfxerronboHandia[i] = erronboHandia[i*2] | (erronboHandia[(i*2)+1]<<8);				
-	}
+}
+
+void erakutsiSpritea(u16* gfx, int indizea, int x, int y, bool eskumarantz)
+{
+	oamSet(&oamMain, // main graphics engine context
+		indizea,           // oam index (0 to 127)  
+		x, y,   // x and y pixel location of the sprite
+		0,                    // priority, lower renders last (on top)
+		0,					  // this is the palette index if multiple palettes or the alpha value if bmp sprite	
+		SpriteSize_16x16,     
+		SpriteColorFormat_256Color, 
+		gfx,//+16*16/2,                  // pointer to the loaded graphics
+		-1,                  // sprite rotation data  
+		false,               // double the size when rotating?
+		false,			// hide the sprite?
+		eskumarantz, false, // vflip, hflip
+		false	// apply mosaic
+		); 
+		  
+	//oamUpdate(&oamMain);  
+}
+
+void ezabatuSpritea(u16* gfx, int indizea)
+{
+	oamSet(&oamMain, // main graphics engine context
+		indizea,           // oam index (0 to 127)  
+		0, 0,   // x and y pixel location of the sprite
+		0,                    // priority, lower renders last (on top)
+		0,					  // this is the palette index if multiple palettes or the alpha value if bmp sprite	
+		SpriteSize_16x16,     
+		SpriteColorFormat_256Color, 
+		gfx,//+16*16/2,                  // pointer to the loaded graphics
+		-1,                  // sprite rotation data  
+		false,               // double the size when rotating?
+		true,			// hide the sprite?
+		false, false, // vflip, hflip
+		false	// apply mosaic
+		); 
+	//oamUpdate(&oamMain); 
 }
 
 /* Funtzio honek erronbo bat irudikatzen du pantailako x,y posizioan. Pantailan ateratzea nahi den erronbo 
@@ -153,9 +150,8 @@ oamSet(&oamMain, // main graphics engine context
 		false,			// hide the sprite?
 		false, false, // vflip, hflip
 		false	// apply mosaic
-		); 
-	  
-oamUpdate(&oamMain);  
+		); 	  
+//oamUpdate(&oamMain);  
 }
 
 void erakutsiMagoaNorantza(int indizea, int x, int y, bool eskumarantz)
@@ -173,9 +169,8 @@ void erakutsiMagoaNorantza(int indizea, int x, int y, bool eskumarantz)
 		false,			// hide the sprite?
 		eskumarantz, false, // vflip, hflip
 		false	// apply mosaic
-		); 
-	  
-oamUpdate(&oamMain);  
+		); 	  
+//oamUpdate(&oamMain);  
 }
 
 /* Funtzio honek erronbo baten indizea pasata pantailatik ezabatzen du */
@@ -196,90 +191,7 @@ oamSet(&oamMain, // main graphics engine context
 		false, false, // vflip, hflip
 		false	// apply mosaic
 		); 
-oamUpdate(&oamMain); 
-
-}
-
-void ErakutsiErronboHandia(int indizea, int x, int y)
-{ 
- 
-oamSet(&oamMain, // main graphics engine context
-		indizea,           // oam index (0 to 127)  
-		x, y,   // x and y pixel location of the sprite
-		0,                    // priority, lower renders last (on top)
-		0,					  // this is the palette index if multiple palettes or the alpha value if bmp sprite	
-		SpriteSize_32x32,     
-		SpriteColorFormat_256Color, 
-		gfxerronboHandia,//+16*16/2,                  // pointer to the loaded graphics
-		-1,                  // sprite rotation data  
-		false,               // double the size when rotating?
-		false,			// hide the sprite?
-		false, false, // vflip, hflip
-		false	// apply mosaic
-		); 
-
-	  
-oamUpdate(&oamMain);  
-}
-
-void EzabatuErronboHandia(int indizea, int x, int y)
-{
-
-oamSet(&oamMain, // main graphics engine context
-		indizea,           // oam index (0 to 127)  
-		x, y,   // x and y pixel location of the sprite
-		0,                    // priority, lower renders last (on top)
-		0,					  // this is the palette index if multiple palettes or the alpha value if bmp sprite	
-		SpriteSize_32x32,     
-		SpriteColorFormat_256Color, 
-		gfxerronboHandia,//+16*16/2,                  // pointer to the loaded graphics
-		-1,                  // sprite rotation data  
-		false,               // double the size when rotating?
-		true,			// hide the sprite?
-		false, false, // vflip, hflip
-		false	// apply mosaic
-		); 
-oamUpdate(&oamMain); 
-
-}
-
-void erakutsiSpritea(u16* gfx, int indizea, int x, int y, bool eskumarantz)
-{
-	oamSet(&oamMain, // main graphics engine context
-		indizea,           // oam index (0 to 127)  
-		x, y,   // x and y pixel location of the sprite
-		0,                    // priority, lower renders last (on top)
-		0,					  // this is the palette index if multiple palettes or the alpha value if bmp sprite	
-		SpriteSize_16x16,     
-		SpriteColorFormat_256Color, 
-		gfx,//+16*16/2,                  // pointer to the loaded graphics
-		-1,                  // sprite rotation data  
-		false,               // double the size when rotating?
-		false,			// hide the sprite?
-		eskumarantz, false, // vflip, hflip
-		false	// apply mosaic
-		); 
-		  
-	oamUpdate(&oamMain);  
-}
-
-void ezabatuSpritea(u16* gfx, int indizea)
-{
-	oamSet(&oamMain, // main graphics engine context
-		indizea,           // oam index (0 to 127)  
-		0, 0,   // x and y pixel location of the sprite
-		0,                    // priority, lower renders last (on top)
-		0,					  // this is the palette index if multiple palettes or the alpha value if bmp sprite	
-		SpriteSize_16x16,     
-		SpriteColorFormat_256Color, 
-		gfx,//+16*16/2,                  // pointer to the loaded graphics
-		-1,                  // sprite rotation data  
-		false,               // double the size when rotating?
-		true,			// hide the sprite?
-		false, false, // vflip, hflip
-		false	// apply mosaic
-		); 
-	oamUpdate(&oamMain); 
+//oamUpdate(&oamMain); 
 }
 
 /***********************2024-2025*******************************/

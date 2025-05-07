@@ -60,6 +60,7 @@ void inGame()
 	erakutsiInGame();
 	erakutsiMagoa(JOKALARI_SPRITE_INDIZEA, PANT_ERDI_X-8, PANT_ERDI_Y-8);
 	HP = 10;
+	consoleDemoInit();
 	iprintf("\x1b[20;0HHP: %d", HP);
 	strcpy(bizitza_barra,"[##########]");
 	iprintf("\x1b[19;0HHP: %s", bizitza_barra);
@@ -68,6 +69,7 @@ void inGame()
 	PUNTUAK = 0;
 	EGOERA=INGAME;
 	hasiMusika(MOD_INGAME);
+	//consoleInit(NULL, 0, BgType_Text4bpp, BgSize_T_256x256, 31, 0, false, true);
 }
 
 void jokoa01()
@@ -127,26 +129,26 @@ void jokoa01()
 
 void inGameInkesta()
 {
-	if (TeklaDetektatu())  // and denbora bat pasa da, 60px/s abiadura gehiegi da
+	if (TeklaDetektatu())
 	{
 		//iprintf("\x1b[3;0HTEKLAK_DAT: %d", TEKLAK_DAT);
 		// mapari 0-500eko limiteak jarri dizkiot
 		// TODO: sortu "barrera bisual" bat maparen inguruan, jokalariak mugak ikusteko
-		if (~TEKLAK_DAT & BIT(6) && jokalari_pos.y > 0)  // gora
+		if (~TEKLAK_DAT & BIT(6) && jokalari_pos.y > SCREEN_HEIGHT/2)  // gora
 		{
 			jokalari_pos.y--;
 		}
-		if (~TEKLAK_DAT & BIT(7) && jokalari_pos.y < 500)  // behera
+		if (~TEKLAK_DAT & BIT(7) && jokalari_pos.y < 512 - SCREEN_HEIGHT/2)  // behera
 		{
 			jokalari_pos.y++;
 		}
-		if (~TEKLAK_DAT & BIT(4) && jokalari_pos.x < 500)  // eskubi
+		if (~TEKLAK_DAT & BIT(4) && jokalari_pos.x < 512 - SCREEN_WIDTH/2)  // eskubi
 		{
 			jokalari_pos.x++;
 			erakutsiMagoaNorantza(JOKALARI_SPRITE_INDIZEA, PANT_ERDI_X-8, PANT_ERDI_Y-8, true);
 			eskumara_begira = true;
 		}
-		if (~TEKLAK_DAT & BIT(5) && jokalari_pos.x > 0)  // ezkerra
+		if (~TEKLAK_DAT & BIT(5) && jokalari_pos.x > SCREEN_WIDTH/2)  // ezkerra
 		{
 			jokalari_pos.x--;
 			erakutsiMagoaNorantza(JOKALARI_SPRITE_INDIZEA, PANT_ERDI_X-8, PANT_ERDI_Y-8, false);
