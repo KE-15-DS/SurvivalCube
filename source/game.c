@@ -151,7 +151,7 @@ void spawnEnemy(etsai_mota_t mota)
     static const int min_dist = 40;
     static const int max_dist = 140;
     static const int min_bound = 0;
-    static const int max_bound = 500;
+    static const int max_bound = 512;
 
     if (etsai_lista_len < 100)
     {
