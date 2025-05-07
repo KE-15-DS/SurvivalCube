@@ -47,7 +47,7 @@ void gameOver()
 	erakutsiGameOver();
 	EGOERA=GAMEOVER;
 	geldituMusika();
-	ezabatuMagoa(JOKALARI_SPRITE_INDIZEA, PANT_ERDI_X-8, PANT_ERDI_Y-8);
+	ezabatuSpritea(JOKALARI_SPRITE_INDIZEA);
 	while (etsai_lista_len > 0)
 	{
 		ezabatu_etsaia(etsai_lista_len - 1);
@@ -58,7 +58,7 @@ void gameOver()
 void inGame()
 {
 	erakutsiInGame();
-	erakutsiMagoa(JOKALARI_SPRITE_INDIZEA, PANT_ERDI_X-8, PANT_ERDI_Y-8);
+	erakutsiSpritea(gfxmago, JOKALARI_SPRITE_INDIZEA, PANT_ERDI_X-8, PANT_ERDI_Y-8, false);
 	HP = 10;
 	consoleDemoInit();
 	iprintf("\x1b[20;0HHP: %d", HP);
@@ -145,13 +145,13 @@ void inGameInkesta()
 		if (~TEKLAK_DAT & BIT(4) && jokalari_pos.x < 512 - SCREEN_WIDTH/2)  // eskubi
 		{
 			jokalari_pos.x++;
-			erakutsiMagoaNorantza(JOKALARI_SPRITE_INDIZEA, PANT_ERDI_X-8, PANT_ERDI_Y-8, true);
+			erakutsiSpritea(gfxmago, JOKALARI_SPRITE_INDIZEA, PANT_ERDI_X-8, PANT_ERDI_Y-8, true);
 			eskumara_begira = true;
 		}
 		if (~TEKLAK_DAT & BIT(5) && jokalari_pos.x > SCREEN_WIDTH/2)  // ezkerra
 		{
 			jokalari_pos.x--;
-			erakutsiMagoaNorantza(JOKALARI_SPRITE_INDIZEA, PANT_ERDI_X-8, PANT_ERDI_Y-8, false);
+			erakutsiSpritea(gfxmago, JOKALARI_SPRITE_INDIZEA, PANT_ERDI_X-8, PANT_ERDI_Y-8, false);
 			eskumara_begira = false;
 		}
 	}
