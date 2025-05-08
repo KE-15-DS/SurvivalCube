@@ -59,6 +59,8 @@ void inGame()
 {
 	erakutsiInGame();
 	erakutsiMagoa(JOKALARI_SPRITE_INDIZEA, PANT_ERDI_X-8, PANT_ERDI_Y-8);
+	jokalari_pos.x = 250;
+	jokalari_pos.y = 250;
 	HP = 10;
 	consoleDemoInit();
 	iprintf("\x1b[20;0HHP: %d", HP);
