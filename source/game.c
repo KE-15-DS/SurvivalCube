@@ -108,6 +108,7 @@ void tick()
             {
                 spawnEnemy(BOSS);
                 BOSSA_DAGO = true;
+                iprintf("\x1b[13;0H     EZ DUZU ALDE EGITERIK!     ");  // 32 karaktere
             }
         }
     }
@@ -117,12 +118,22 @@ void tick()
 
 void marraztu()
 {
-    // MEGA TODO
     int i;
     for (i=0; i < etsai_lista_len; i++)
     {
         marraztu_etsaia(i, &etsai_lista[i]);
     }
+
+    if (erasoa_ezkerrean)
+    {
+        erakutsiSpritea(gfxbolaFuego, SU_BOLA_SPRITE_INDIZEA, SCREEN_WIDTH/2 - 8 + (eraso_cooldown - ERASO_FRAMES)*2 - 40, SCREEN_HEIGHT/2 - 8, false);
+    }
+    else if (erasoa_eskuman)
+    {
+        erakutsiSpritea(gfxbolaFuego, SU_BOLA_SPRITE_INDIZEA, SCREEN_WIDTH/2 - 8 - (eraso_cooldown - ERASO_FRAMES)*2 + 40, SCREEN_HEIGHT/2 - 8, true);
+    }
+    else
+        ezabatuSpritea(SU_BOLA_SPRITE_INDIZEA);
 }
 
 // Marraztu edo pantailatik ezabatzen du behar den heinean
@@ -187,8 +198,8 @@ etsaia_t etsaia_hasieratu(koord_t abs, etsai_mota_t mota)
     e.eskumarantz = false;
     switch (mota)
     {
-    case MAGO:
-        e.gfx = gfxmago;
+    case NORMALA:
+        e.gfx = gfxzombi;
         e.abiadura = 2;
         e.puntuak = 10;
         e.hp = 1;
@@ -204,13 +215,13 @@ etsaia_t etsaia_hasieratu(koord_t abs, etsai_mota_t mota)
         e.abiadura = 2;
         e.puntuak = 30;
         e.hp = 2;
-        e.gfx = gfxzombi;  // momentuz
+        e.gfx = gfxgolem;  
         break;
     case AZKARRA:
-        e.abiadura = 0;
+        e.abiadura = 1;
         e.puntuak = 50;
         e.hp = 1;
-        e.gfx = gfxzombi;  // momentuz
+        e.gfx = gfxmurcielago;  
         break;
     }
     

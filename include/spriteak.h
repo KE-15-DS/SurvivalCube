@@ -26,9 +26,14 @@ extern void SpriteakMemorianGorde();
 #define PANT_ERDI_X 128
 #define PANT_ERDI_Y 96
 #define JOKALARI_SPRITE_INDIZEA 101
+#define SU_BOLA_SPRITE_INDIZEA 102
 
 extern u16* gfxmago;
 extern u16* gfxzombi;
+extern u16* gfxgolem;
+extern u16* gfxmurcielago;
+extern u16* gfxbolaFuego;
+
 void erakutsiSpritea(u16* gfx, int indizea, int x, int y, bool eskumarantz);
 void ezabatuSpritea(int indizea);
 

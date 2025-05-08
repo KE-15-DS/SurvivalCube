@@ -7,7 +7,7 @@
 #include "mate.h"
 
 typedef enum {
-    MAGO,
+    NORMALA,
     SENDOA,
     AZKARRA,
     BOSS
