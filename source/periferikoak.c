@@ -8,6 +8,7 @@ periferikoak.c
 #include <stdio.h>
 #include "definizioak.h"
 #include "periferikoak.h"
+#include "jokoa01.h"
 
 
 int tekla; // Sakatutako tekla gordetzeko aldagaia; baloratu ea behar den

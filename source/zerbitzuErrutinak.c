@@ -13,9 +13,8 @@ periferikoak.c
 #include "jokoa01.h"
 #include "game.h"
 
-// int EGOERA; // Arazo bat badago bota errua Ekaini
-int seg3;   // Hiru segundo pasatzen ote diren ikusten joateko
 touchPosition PANT_DAT;
+
 void tekEten ()
 {
 	// switch-case?
@@ -77,7 +76,6 @@ void tenpEten()
 	if (EGOERA == MENU){
 		ukimenPantailaInkesta(0);
 	}
-	static int tik=0;
 	if (EGOERA == INGAME)
 	{
 		// marraztu behar dena marraztu
