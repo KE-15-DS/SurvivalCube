@@ -187,8 +187,8 @@ etsaia_t etsaia_hasieratu(koord_t abs, etsai_mota_t mota)
     e.eskumarantz = false;
     switch (mota)
     {
-    case MAGO:
-        e.gfx = gfxmago;
+    case NORMALA:
+        e.gfx = gfxzombi;
         e.abiadura = 2;
         e.puntuak = 10;
         e.hp = 1;
@@ -204,13 +204,13 @@ etsaia_t etsaia_hasieratu(koord_t abs, etsai_mota_t mota)
         e.abiadura = 2;
         e.puntuak = 30;
         e.hp = 2;
-        e.gfx = gfxzombi;  // momentuz
+        e.gfx = gfxgolem;  
         break;
     case AZKARRA:
         e.abiadura = 0;
         e.puntuak = 50;
         e.hp = 1;
-        e.gfx = gfxzombi;  // momentuz
+        e.gfx = gfxmurcielago;  
         break;
     }
     

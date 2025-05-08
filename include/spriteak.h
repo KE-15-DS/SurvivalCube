@@ -29,6 +29,10 @@ extern void SpriteakMemorianGorde();
 
 extern u16* gfxmago;
 extern u16* gfxzombi;
+extern u16* gfxgolem;
+extern u16* gfxmurcielago;
+extern u16* gfxbolaFuego;
+
 void erakutsiSpritea(u16* gfx, int indizea, int x, int y, bool eskumarantz);
 void ezabatuSpritea(int indizea);
 
