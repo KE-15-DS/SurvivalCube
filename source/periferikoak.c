@@ -111,24 +111,46 @@ void ErlojuaGelditu()
 	DENB0_KNT &= ~128;
 }
 
-void ukimenPantailaInkesta(){
-	touchPosition ukimena;
+void ukimenPantailaInkesta(int scene) //scene-k nondik deitu den jakiten laguntzen digu
+{
+	touchRead(&PANT_DAT);
 
-	// botoien eta antalla taktilaren egoera irakurri
-
-	scanKeys();
-	touchRead(&ukimena);
-
-	iprintf("\x1b[22;0H]");
-	if (keysHeld() & KEY_TOUCH){
-		iprintf("stylus ikutzen X: %3d Y: %3d", ukimena.px, ukimena.py);
-
-	} else {
-		iprintf("ez dago ukimenik");
+	// if (PANT_DAT.px != 0 && PANT_DAT.py != 0){ // ez det uste jada hau berko deunik
+	// 	iprintf("\x1b[22;0Hstylus ikutzen X: %3d Y: %3d", PANT_DAT.px, PANT_DAT.py);
+	// }
+			
+	if (scene == 0) //main menu TODO: aldatu koordenadak zuen gustora
+	{
+		if (PANT_DAT.px < 116 && PANT_DAT.px > 51 && 
+			PANT_DAT.py < 170 && PANT_DAT.py > 151 )
+		{
+			inGame();
+		}
+				
+		if (PANT_DAT.px < 216 && PANT_DAT.px > 139 && 
+			PANT_DAT.py < 170 && PANT_DAT.py > 151 )
+		{
+			info();
+		}
 	}
 
+	if (scene == 1) //game over
+	{
+		if (PANT_DAT.px < 116 && PANT_DAT.px > 51 && 
+			PANT_DAT.py < 120 && PANT_DAT.py > 101 )
+		{
+			inGame();
+		}
+				
+		if (PANT_DAT.px < 216 && PANT_DAT.px > 139 && 
+			PANT_DAT.py < 120 && PANT_DAT.py > 101 )
+		{
+			menu();
+		}
+	}
+		
 }
 
-
 /***********************2024-2025*******************************/
+//2025 fj summer
 

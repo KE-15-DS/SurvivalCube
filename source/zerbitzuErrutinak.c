@@ -15,7 +15,7 @@ periferikoak.c
 
 // int EGOERA; // Arazo bat badago bota errua Ekaini
 int seg3;   // Hiru segundo pasatzen ote diren ikusten joateko
-
+touchPosition PANT_DAT;
 void tekEten ()
 {
 	// switch-case?
@@ -75,8 +75,7 @@ void tekEten ()
 void tenpEten()
 {
 	if (EGOERA == MENU){
-		//TODO: beitu honek nola iteun
-		ukimenPantailaInkesta();
+		ukimenPantailaInkesta(0);
 	}
 	static int tik=0;
 	if (EGOERA == INGAME)
@@ -94,6 +93,11 @@ void tenpEten()
 		iprintf("\x1b[2;0HIFRAMES: %d", IFRAMES);
 		iprintf("\x1b[3;0Heraso: %d, esk:%d,ezk:%d", eraso_cooldown, erasoa_eskuman, erasoa_ezkerrean);
 		iprintf("\x1b[4;0HBOSS: %d", BOSSA_DAGO);
+	}
+	if (EGOERA == GAMEOVER){
+		
+		ukimenPantailaInkesta(1);
+		
 	}
 	/*
 	if (EGOERA!=ZAI)

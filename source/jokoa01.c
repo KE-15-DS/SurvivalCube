@@ -42,7 +42,6 @@ void info()
 
 void gameOver()
 {
-	// TODO: retry/play again botoia programau
 	iprintf("\x1b[22;5HGame Over");
 	erakutsiGameOver();
 	EGOERA=GAMEOVER;
@@ -59,6 +58,8 @@ void inGame()
 {
 	erakutsiInGame();
 	erakutsiSpritea(gfxmago, JOKALARI_SPRITE_INDIZEA, PANT_ERDI_X-8, PANT_ERDI_Y-8, false);
+	jokalari_pos.x = 250;
+	jokalari_pos.y = 250;
 	HP = 10;
 	consoleDemoInit();
 	iprintf("\x1b[20;0HHP: %d", HP);
