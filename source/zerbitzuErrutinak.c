@@ -75,8 +75,7 @@ void tekEten ()
 void tenpEten()
 {
 	if (EGOERA == MENU){
-		//TODO: beitu honek nola iteun
-		
+		ukimenPantailaInkesta(0);
 	}
 	static int tik=0;
 	if (EGOERA == INGAME)
@@ -97,7 +96,7 @@ void tenpEten()
 	}
 	if (EGOERA == GAMEOVER){
 		
-		ukimenPantailaInkesta();
+		ukimenPantailaInkesta(1);
 		
 	}
 	/*
