@@ -47,6 +47,7 @@ void gameOver()
 	EGOERA=GAMEOVER;
 	geldituMusika();
 	ezabatuSpritea(JOKALARI_SPRITE_INDIZEA);
+	ezabatuSpritea(SU_BOLA_SPRITE_INDIZEA);
 	while (etsai_lista_len > 0)
 	{
 		ezabatu_etsaia(etsai_lista_len - 1);
