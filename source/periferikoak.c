@@ -128,7 +128,7 @@ void ukimenPantailaInkesta(int scene) //scene-k nondik deitu den jakiten laguntz
 			inGame();
 		}
 				
-		if (PANT_DAT.px < 216 && PANT_DAT.px > 139 && 
+		if (PANT_DAT.px < 205 && PANT_DAT.px > 140 &&
 			PANT_DAT.py < 170 && PANT_DAT.py > 151 )
 		{
 			info();
@@ -149,7 +149,16 @@ void ukimenPantailaInkesta(int scene) //scene-k nondik deitu den jakiten laguntz
 			menu();
 		}
 	}
-		
+
+	if (scene == 2) //info
+	{
+		if (PANT_DAT.px < 61 && PANT_DAT.px > 4 &&
+			PANT_DAT.py < 26 && PANT_DAT.py > 4 )
+		{
+			menu();
+		}
+	}
+
 }
 
 /***********************2024-2025*******************************/
