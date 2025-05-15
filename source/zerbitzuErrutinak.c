@@ -92,10 +92,13 @@ void tenpEten()
 		iprintf("\x1b[3;0Heraso: %d, esk:%d,ezk:%d", eraso_cooldown, erasoa_eskuman, erasoa_ezkerrean);
 		iprintf("\x1b[4;0HBOSS: %d", BOSSA_DAGO);
 	}
-	if (EGOERA == GAMEOVER){
-		
+	if (EGOERA == GAMEOVER)
+	{
 		ukimenPantailaInkesta(1);
-		
+	}
+	if (EGOERA == INFO)
+	{
+		ukimenPantailaInkesta(2);
 	}
 	/*
 	if (EGOERA!=ZAI)
