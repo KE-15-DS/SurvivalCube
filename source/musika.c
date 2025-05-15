@@ -11,6 +11,7 @@ void hasieratuMusika()
     mmLoad(MOD_INGAME);
     mmLoad(MOD_GAMEOVER);
     mmLoadEffect(SFX_HURT);
+    mmLoadEffect(SFX_HIT);
 }
 
 void hasiMusika(int abestia)

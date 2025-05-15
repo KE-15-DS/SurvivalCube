@@ -193,7 +193,6 @@ etsaia_t etsaia_hasieratu(koord_t abs, etsai_mota_t mota)
     //etsaia_t e = {abs, 10, false, false, gfxmago};
     etsaia_t e;
     e.pos = abs;
-    e.isBoss = false;
     e.iframes = 0;
     e.eskumarantz = false;
     switch (mota)
@@ -205,7 +204,6 @@ etsaia_t etsaia_hasieratu(koord_t abs, etsai_mota_t mota)
         e.hp = 1;
         break;
     case BOSS:
-        e.isBoss = true;
         e.abiadura = 1;
         e.puntuak = -1;  // autocasting -> max int jejejejeje
         e.hp = -1;  // 255 aldiz jotzea lortzen baduzu bakarrik geldituko zara, zuk zeuk sortutako mundu desolatuan harrapatuta

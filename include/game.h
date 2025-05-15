@@ -20,7 +20,6 @@ typedef struct {
     uint8_t abiadura; // zenbat frame itxaron mugitu baino lehen, 0 -> jokalariaren abiadura
     uint16_t puntuak; // hiltzean emango dituen puntu kopurua
     bool eskumarantz;  // norantz begiratzen duen
-    bool isBoss;  // hilezina izatea
     u16* gfx;  // spriteari erakuslea
 } etsaia_t;
 
