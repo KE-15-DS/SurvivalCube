@@ -24,7 +24,6 @@ int denb; // denbora neurtzen joateko; baloratu ea beharrezkoa den
 
 void menu()
 {
-	// TODO: benetako menu bat in
 	erakutsiMenua(); // fondoa erakutsi
 	iprintf("\x1b[22;5HOngi etorri gure jokora");
 	EGOERA=MENU;
@@ -33,7 +32,6 @@ void menu()
 
 void info()
 {
-	// TODO: honentzat fondo guapardo bat in
 	erakutsiInfo();
 	iprintf("\x1b[22;5HHonela jokatzen da: ");
 	EGOERA=INFO;
@@ -91,7 +89,6 @@ void jokoa01()
 	//konfiguratuTeklatua(1 + 16384);  // 2^0+2^14
 	//konfiguratuTeklatua(KEY_IRQ_ENABLE | KEY_IRQ_OR | KEY_A | KEY_START | KEY_SELECT);
 	konfiguratuTeklatua(1 + 2 + (1<<2) + (1<<3) + (1<<14));  // A, START, SELECT
-	// TODO: konfiguratu tenporizadorea / VBLANK etenak erabili
 	konfiguratuTenporizadorea(56798, (1<<6)+(1<<7)+1);
 	etenZerbErrutEzarri();
 	TekEtenBaimendu();
@@ -118,7 +115,6 @@ void jokoa01()
 
 			break;
 		}
-		//iprintf("\x1b[4;0H me cago en su mare");
 		*/
 		// Hemen hau jarri beharko genukeen:
 		// swiWaitForVBlank();
@@ -134,8 +130,7 @@ void inGameInkesta()
 	if (TeklaDetektatu())
 	{
 		//iprintf("\x1b[3;0HTEKLAK_DAT: %d", TEKLAK_DAT);
-		// mapari 0-500eko limiteak jarri dizkiot
-		// TODO: sortu "barrera bisual" bat maparen inguruan, jokalariak mugak ikusteko
+		//maparen limiteak
 		if (~TEKLAK_DAT & BIT(6) && jokalari_pos.y > SCREEN_HEIGHT/2)  // gora
 		{
 			jokalari_pos.y--;
@@ -157,7 +152,4 @@ void inGameInkesta()
 			eskumara_begira = false;
 		}
 	}
-
-
 }
-

@@ -40,7 +40,6 @@ void tick()
             e->iframes--;
 
         // mugitu etsaiak
-        // TODO kontrolatu denbora
         if (mugituDelay % (e->abiadura + 1) == 0)
         {
             int_norabide_t n = lortu_norabidea(abs2rel(e->pos));
@@ -92,14 +91,13 @@ void tick()
 
     iprintf("\x1b[17;0HPuntuazioa: %d                 ", PUNTUAK);
 
-    // TODO: menos random
     if (!BOSSA_DAGO)
     {
-        int chance = PUNTUAK / 200 + 20; // TODO tunear
+        int chance = PUNTUAK / 200 + 20;
         int enemigos_unlocked = PUNTUAK / 300;
         if (random_int(chance, 100) == 100)
         {
-            spawnEnemy(random_int(0,enemigos_unlocked));  // funtzionatzen du ze enum ak intak dira
+            spawnEnemy(random_int(0,enemigos_unlocked));  // enum ak intak direlako funtzionatzen du
         }
 
         if (PUNTUAK > 1000)
@@ -179,7 +177,7 @@ void spawnEnemy(etsai_mota_t mota)
             k.x = x;
             k.y = y;
             abs_pos  = rel2abs(k);
-        } while (abs_pos.x < min_bound || abs_pos.y < min_bound || abs_pos.x > max_bound || abs_pos.y > max_bound); // TODO: TESTEATU ONDO (nei ondo itezila esango nuke)
+        } while (abs_pos.x < min_bound || abs_pos.y < min_bound || abs_pos.x > max_bound || abs_pos.y > max_bound);
 
         etsaia_t e = etsaia_hasieratu(abs_pos, mota);
         etsai_lista[etsai_lista_len] = e;  // kopia
@@ -235,7 +233,6 @@ bool pantailan_dago(koord_t pant)
 }
 
 // rel-en dagoen etsaiak jokalariarekin talka egin al duen itzultzen du
-// TODO agian hobetu
 bool talka(koord_t rel)
 {
     return (rel.x <= 5 && rel.x >= -5) && (rel.y <= 5 && rel.y >= -5);

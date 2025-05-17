@@ -46,7 +46,7 @@ int main(void)
 	// Zuen jokoari dei egingo zaio hemendik
 	jokoa01();
 
-	return(0); // AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+	return(0);
 
 }
 

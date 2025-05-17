@@ -5,7 +5,7 @@
 Hemen orotariko funtzio eta datu mota matematikoak definitzen dira; hala nola, 
 koordenatuak eta erreferentzi sistemen artean pasatzeko funtzioak.
 
-abs: koordenatu absolutuak: maparen koordenatuak. Zentrua 0,0-n dago eta limiteak {...}-n definituta daude. [TODO: bermatu, uste dot orain ez dela hala]
+abs: koordenatu absolutuak: maparen koordenatuak. Zentrua 0,0-n dago eta limiteak {...}-n definituta daude.
 rel: jokalarian zentratuta: pantailaren zentrua -- hau da, pantailan jokalariaren posizioa, hau beti erdian egongo baita -- da 0,0 puntua.
 pant: pantailaren koordenatuak: pantailaren lehenengo pixela, goiko ezkerreko iskinakoa, da 0,0 puntua, eta ez da onartzen balio negatiborik.
 

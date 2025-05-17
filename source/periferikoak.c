@@ -40,7 +40,6 @@ int SakatutakoTekla()
 	else if (~TEKLAK_DAT & 512) return L;
 }
 
-// TODO? konfiguratu A, B, etab. pasatzen
 void konfiguratuTeklatua(int TEK_konf)
 {
 	// Teklatuaren konfigurazioa bere S/I erregistroak aldatuz
@@ -120,7 +119,7 @@ void ukimenPantailaInkesta(int scene) //scene-k nondik deitu den jakiten laguntz
 	// 	iprintf("\x1b[22;0Hstylus ikutzen X: %3d Y: %3d", PANT_DAT.px, PANT_DAT.py);
 	// }
 			
-	if (scene == 0) //main menu TODO: aldatu koordenadak zuen gustora
+	if (scene == 0) //main menu
 	{
 		if (PANT_DAT.px < 116 && PANT_DAT.px > 51 && 
 			PANT_DAT.py < 170 && PANT_DAT.py > 151 )
