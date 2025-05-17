@@ -64,7 +64,7 @@ void tick()
             }
             else 
             {
-                e->iframes = eraso_cooldown;  // mototruco
+                e->iframes = eraso_cooldown;
             }
         }
         else if (IFRAMES ==  0 && talka(abs2rel(e->pos)))
@@ -141,7 +141,6 @@ void marraztu_etsaia(int indizea, etsaia_t *e)
     if (pantailan_dago(pant))
     {
         // marraztu etsaia
-        // temporal hasta que haya sprite
         pant.x-=8;  // spritea zentratzeko
         pant.y-=8;
         //erakutsiMagoa(indizea, pant.x, pant.y);
